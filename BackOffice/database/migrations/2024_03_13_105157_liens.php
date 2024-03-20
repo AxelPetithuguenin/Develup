@@ -14,9 +14,8 @@ return new class extends Migration
         // CREATION DE LA TABLE LIENS
         Schema::create('liens', function (Blueprint $table) {
             $table->id('id');
-            $table->string('libelle');
-            $table->string('type');
-            $table->foreignId('partenaire_id')->constrained('partenaires'); // Cle etrangere
+            $table->string('nom');
+            $table->string('icone');
             $table->timestamps();
         });
     }
