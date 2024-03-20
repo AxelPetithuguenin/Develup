@@ -19,7 +19,7 @@ class BureauController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**

@@ -17,3 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/create_bureau', [ActionController::class,'create'])->name('create_bureau');
