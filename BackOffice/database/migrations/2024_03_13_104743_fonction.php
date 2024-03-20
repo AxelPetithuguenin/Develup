@@ -14,8 +14,7 @@ return new class extends Migration
         // CREATION DE LA TABLE FONCTION
         Schema::create('fonctions', function (Blueprint $table) {
             $table->id('id');
-            $table->string('libelle');
-            $table->foreignId('id_bureau')->constrained('bureau', 'id'); // Cle etrangere
+            $table->string('role');
             $table->timestamps();
         });
     }
