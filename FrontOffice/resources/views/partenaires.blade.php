@@ -41,18 +41,6 @@
                                 <div class="back-header-card-container">
                                     <div class="green-line"></div>
                                     <p class="text lg">
-                                        Site-web
-                                    </p>
-                                    <div class="green-line"></div>
-                                </div>
-                                <a href="#" class="text">
-                                    <span class="web_link text">
-                                        Website
-                                    </span>
-                                </a>
-                                <div class="back-header-card-container">
-                                    <div class="green-line"></div>
-                                    <p class="text lg">
                                         Réseaux Sociaux
                                     </p>
                                     <div class="green-line"></div>
@@ -60,8 +48,8 @@
                                 <div class="social-netword-card-container">
                                     <div class="wrap">
                                         @foreach($partenaire->liens as $lien)
-                                            <a href="{{ $lien->pivot->lien }}" target="_blank">
-                                                <img src="{{ asset('BackOffice/public/storage/icone/' . $lien->icone) }}" alt="{{ $lien->nom }}" title="{{ $lien->nom }}" width="20" height="20">
+                                            <a href="{{ $lien->pivot->lien }}" target="_blank" class="icone-partenaire">
+                                                <img src="{{ asset('BackOffice/public/storage/icone/' . $lien->icone) }}" alt="{{ $lien->nom }}">
                                             </a>
                                         @endforeach
                                     </div>
