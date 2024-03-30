@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SimplyRouteController;
-use App\Http\Controllers\PartenairesController;
+    use App\Http\Controllers\PartenairesController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -46,7 +47,7 @@ Route::get('/', function () {
         /*===== PRESENTATION PAGE =====*/ 
         Route::get('/presentation-bureau', [SimplyRouteController::class,'presentation'])->name('presentation-show'); 
         /*===== PARTENAIRES =====*/ 
-        Route::get('/partenaires', [PartenairesController::class, 'index'])->name('partenaires.index');
+        Route::get('/partenaires', [PartenairesController::class,'index'])->name('partenaires-show'); 
         /*===== RESULTATS PAGE =====*/ 
         Route::get('/resultats', [SimplyRouteController::class,'resultats'])->name('resultats-show'); 
         /*===== ADHERER PAGE  =====*/ 
