@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PartenairesController;
+use App\Http\Controllers\LiensController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+/*===== PARTENAIRES =====*/
+Route::resource('dashboard/partenaires', PartenairesController::class);
+/*===== LIENS =====*/
+Route::resource('liens', LiensController::class);

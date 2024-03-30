@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SimplyRouteController;
+use App\Http\Controllers\PartenairesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +32,7 @@ Route::get('/', function () {
         /*===== PERSONNAL TEMOIGNAGE PAGE =====*/ 
         Route::get('/temoignage', [SimplyRouteController::class,'temoignage'])->name('temoignage-show'); 
 
-    /*===== ACTION =====*/
+    /*===== ACTIONS =====*/
 
 
     
@@ -45,7 +46,7 @@ Route::get('/', function () {
         /*===== PRESENTATION PAGE =====*/ 
         Route::get('/presentation-bureau', [SimplyRouteController::class,'presentation'])->name('presentation-show'); 
         /*===== PARTENAIRES =====*/ 
-        Route::get('/partenaires', [SimplyRouteController::class,'partenaires'])->name('partenaires-show'); 
+        Route::get('/partenaires', [PartenairesController::class, 'index'])->name('partenaires.index');
         /*===== RESULTATS PAGE =====*/ 
         Route::get('/resultats', [SimplyRouteController::class,'resultats'])->name('resultats-show'); 
         /*===== ADHERER PAGE  =====*/ 
