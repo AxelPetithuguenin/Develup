@@ -2,13 +2,6 @@
 
 @section('content')
 
-    <!-- // MESSAGE SUCCES // -->
-    @if(session('success'))
-        <div class="text">
-            {{ session('success') }}
-        </div>
-    @endif
-
     <!-- // LIEN CREATION D'UN PARTENAIRE // -->
     <form action="{{ route('partenaires.create')}}" method="get">
         @csrf

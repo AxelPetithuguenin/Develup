@@ -146,9 +146,12 @@ const sr = ScrollReveal();
     });
 
     // PARTENAIRES // 
-    sr.reveal('.box-image', {
-        duration: 1000, 
-        origin: 'bottom', 
-        distance: '50px',
-        interval: 200 
+    sr.reveal('.card-box-image', {
+        delay: 200,
+        duration: 1000,
+        interval: 300,
+        origin: 'bottom',
+        distance: '20px',
+        easing: 'ease-in-out',
+        reset: true
     });

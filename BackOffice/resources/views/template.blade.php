@@ -70,6 +70,19 @@
             </div>
             <div class="dashboard-content">
                 <div class="dashboard-content-header">
+
+                        <!-- // MESSAGE SUCCES // -->
+                        @if(session('success'))
+                            <div class="message-succes-dashboard">
+                                <div class="message-succes-container">
+                                    <div class="text">
+                                        <i class="ri-bard-line lg"></i>
+                                        {{ session('success') }}
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+
                     <h1 class="middle-text dashboard-text">DASHBOARD</h1>
                     <div class="gray-line"></div>
                         <!-- // CONTAINER PAGE // -->
