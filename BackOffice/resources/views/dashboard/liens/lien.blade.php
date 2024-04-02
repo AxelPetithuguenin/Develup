@@ -8,13 +8,6 @@
         <button type="submit" class="header-button-dashboard btn green-btn text">Créer un nouveau réseau social</button>
     </form>
 
-    <!-- // MESSAGE SUCCES // -->
-    @if(session('success'))
-        <div class="text">
-            {{ session('success') }}
-        </div>
-    @endif
-
     <!-- // LSITES DES RESEAUX SOCIAUX // -->
     <table class="dashboard-table">
         <thead class="dashboad-thread text">

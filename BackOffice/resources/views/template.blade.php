@@ -13,7 +13,7 @@
     <!-- CDN REMIXICON // -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" integrity="sha512-HXXR0l2yMwHDrDyxJbrMD9eLvPe3z3qL3PPeozNTsiHJEENxx8DH2CxmV05iwG0dwoz5n4gQZQyYLUNt1Wdgfg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- // FAVICON  // -->
-    <link rel="shortcut icon" href="./assets/image/logo/logo.png"/>
+    <link rel="shortcut icon" href="{{ asset('BackOffice/public/assets/image/logo/logo.png') }}"/>
 
 </head>
 <body>
@@ -22,8 +22,7 @@
     <section class="dashboard">
         <div class="sidebar">
             <div class="sidebar-header">
-                <img src="
-                {{ asset('BackOffice/public/assets/image/logo/dark-logo.png') }}" alt="logo"/>
+                <img src="{{ asset('BackOffice/public/assets/image/logo/dark-logo.png') }}" alt="logo"/>
             </div>
             <div class="sidebar-link-container">
                 <ul>
@@ -85,8 +84,10 @@
 
                     <h1 class="middle-text dashboard-text">DASHBOARD</h1>
                     <div class="gray-line"></div>
-                        <!-- // CONTAINER PAGE // -->
-                            @yield('content')
+                    <!-- // CONTAINER PAGE // -->
+                    <div class="main-content">
+                        @yield('content')
+                    </div>
                 </div>
             </div>
         </div>

@@ -141,15 +141,13 @@ class PartenairesController extends Controller
             $partenaire = Partenaires::find($id);
             $partenaire->nom_partenaire = $request->input('nom_partenaire');
     
-            // Traitement du nouveau logo si fourni
             if ($request->hasFile('logo_partenaire')) {
                 $logo_partenaire = $request->file('logo_partenaire');
                 $logoName = $logo_partenaire->getClientOriginalName(); 
                 $logoPath = $logo_partenaire->storeAs('public/logos', $logoName);
                 $partenaire->logo_partenaire = $logoPath;
             }
-    
-            // Enregistrer les modifications sur le partenaire
+
             $partenaire->save();
     
             // Associer chaque lien au partenaire
@@ -158,11 +156,22 @@ class PartenairesController extends Controller
                 $partenaire->liens()->syncWithoutDetaching([$lienId => ['lien' => $lienUrl]]);
             }
     
+            // Récupérer les liens à supprimer
+            $liensASupprimer = array_diff($partenaire->liens()->pluck('id')->toArray(), $request->input('lien_id'));
+    
+            // Supprimer les URL associées aux liens supprimés de la base de données
+            foreach ($liensASupprimer as $lienId) {
+                $partenaire->liens()->detach($lienId);
+            }
+    
+            // dd('Partenaire mis à jour avec succès !');
             return redirect()->route('partenaires.index')->with('success', 'Partenaire modifié avec succès!');
-        } catch (\Exception $e) {
+        } 
+        catch (\Exception $e) {
             return redirect()->back()->with('error', 'Une erreur s\'est produite.');
         }
-    }  
+    }
+    
     
 
     /**
