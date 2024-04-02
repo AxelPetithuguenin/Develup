@@ -96,15 +96,86 @@
   
     <!-- // SCRIPT // -->
     <script>
-        
         const menuHamburger = document.querySelector('.menu-hamburger-dashboard');
         const sidebar = document.querySelector('.sidebar');
-    
        
         menuHamburger.addEventListener('click', () => {
           
             sidebar.classList.toggle('sidebar-active');
         });
+    </script>
+
+    <script>
+        // Tri ordre alphabétique ou inverse 
+        const compare = function(ids, asc) {
+            return function(row1, row2) {
+                const tdValue = function(row, ids) {
+                    return row.children[ids].textContent;
+                }
+                const tri = function(v1, v2) {
+                    if (v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2)) {
+                        return v1 - v2;
+                    } else {
+                        return v1.toString().localeCompare(v2);
+                    }
+                    return v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2);
+                };
+                return tri(tdValue(asc ? row1 : row2, ids), tdValue(asc ? row2 : row1, ids));
+            }
+        }
+
+        const tbody = document.querySelector('tbody');
+        const thx = document.querySelectorAll('th');
+        const trxb = tbody.querySelectorAll('tr');
+        thx.forEach(function(th) {
+            th.addEventListener('click', function() {
+                let classe = Array.from(trxb).sort(compare(Array.from(thx).indexOf(th), this.asc = !this.asc));
+                classe.forEach(function(tr) {
+                    tbody.appendChild(tr)
+                });
+            })
+        });
+                
+
+        // Function sur la recherche des champs
+        function searchTable() {
+            // Récupération de la valeur saisie dans l'input rechercher
+            var input = document.getElementById('searchInput').value;
+            input = input.toLowerCase();
+
+            // Récupération des lignes de la table
+            var rows = document.querySelectorAll('#dashbaord-table tbody tr');
+
+            // Parcours de chaque ligne de la table
+            for (var i = 0; i < rows.length; i++) {
+                // Initialisation d'un flag pour savoir si la ligne doit être affichée ou non
+                var showRow = false;
+
+                // Récupération des cellules de la ligne
+                var cells = rows[i].querySelectorAll('td');
+
+                // Parcours de chaque cellule de la ligne
+                for (var j = 0; j < cells.length; j++) {
+                    // Récupération du texte de la cellule
+                    var cellText = cells[j].textContent || cells[j].innerText;
+                    cellText = cellText.toLowerCase();
+
+                    // Vérification si le texte de la cellule contient la valeur saisie dans l'input rechercher
+                    if (cellText.includes(input)) {
+                        // Si oui, on met le flag à true et on sort de la boucle des cellules
+                        showRow = true;
+                        break;
+                    }
+                }
+
+                // Affichage ou masquage de la ligne en fonction de la valeur du flag
+                if (showRow) {
+                    rows[i].style.display = '';
+                } else {
+                    rows[i].style.display = 'none';
+                }
+            }
+        }
     </script>
 
 </body>

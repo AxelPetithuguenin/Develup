@@ -296,6 +296,47 @@ header{
     letter-spacing: 5px;
 }
 
+.search-bar{
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-bottom: 50px;
+    padding: 0 15px;
+    display: flex;
+    justify-content: end;
+}
+.search-bar-content{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.input-search-box{
+    width: auto;
+    height: auto;
+    padding: 7px 4px;
+    letter-spacing: 1.2px;
+    border: 2px solid var(--primary-color);
+    border-radius: 15px;
+    outline: none;
+}
+.input-box:focus{
+    padding: 7px 4px;
+    letter-spacing: 1.2px;
+}
+.search-icone{
+    position: relative;
+    right: 25px;
+    border-radius: 25px;
+    padding: 7px 20px;
+    color: var(--white-color);
+    background-color: var(--primary-color);
+    transition: .4s ease-in;
+}
+.search-icone:hover{
+    background-color: var(--primary-orange);
+    cursor: pointer;
+}
+
 /* TABLE */
 .dashboard-table{
     width: 100%;

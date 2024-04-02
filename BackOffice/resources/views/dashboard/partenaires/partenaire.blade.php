@@ -8,9 +8,17 @@
         <button type="submit" class="header-button-dashboard btn green-btn text">Créer un partenaire</button>
     </form>
 
-    <!-- // LSITES DES PARTENAIRES // -->
-    <table class="dashboard-table">
-        <thead class="dashboad-thread text">
+    <!-- // SEARCH BAR // -->
+    <div class="search-bar">
+        <div class="search-bar-content">
+            <input class="text input-search-box" type="text" id="searchInput" onkeyup="searchTable()" placeholder="Rechercher" title="Rechercher">
+            <i class="ri-search-line search-icone text"></i>
+        </div>
+    </div>
+
+    <!-- // LISTE DES PARTENAIRES // -->
+    <table class="dashboard-table" id="dashbaord-table"> 
+        <thead class="dashboard-thread text">
             <tr>
                 <th>
                     <button class="btn btn-link text" data-sort="name">Nom du partenaire <i class="ri-expand-up-down-fill"></i></button>
@@ -21,7 +29,7 @@
                 <th>Supprimer</th>
             </tr>
         </thead>
-        <tbody class="dashboad-tbody text">
+        <tbody class="dashboard-tbody text">
             
             @foreach($partenaires as $partenaire)
                 <tr>

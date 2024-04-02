@@ -8,8 +8,16 @@
         <button type="submit" class="header-button-dashboard btn green-btn text">Créer un nouveau réseau social</button>
     </form>
 
+    <!-- // SEARCH BAR // -->
+    <div class="search-bar">
+        <div class="search-bar-content">
+            <input class="text input-search-box" type="text" id="searchInput" onkeyup="searchTable()" placeholder="Rechercher" title="Rechercher">
+            <i class="ri-search-line search-icone text"></i>
+        </div>
+    </div>
+
     <!-- // LSITES DES RESEAUX SOCIAUX // -->
-    <table class="dashboard-table">
+    <table class="dashboard-table" id="dashbaord-table"> 
         <thead class="dashboad-thread text">
             <tr>
                 <th>
