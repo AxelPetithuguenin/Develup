@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TemoignageController;
 use App\Http\Controllers\PartenairesController;
 use App\Http\Controllers\LiensController;
 use Illuminate\Support\Facades\Route;
@@ -23,3 +24,6 @@ Route::get('/', function () {
 Route::resource('dashboard/partenaires', PartenairesController::class);
 /*===== LIENS =====*/
 Route::resource('liens', LiensController::class);
+
+/*===== TEMOIGNAGE =====*/
+Route::resource('dashboard/temoignage', TemoignageController::class);
