@@ -60,3 +60,4 @@ Route::get('/', function () {
     /*===== DEVENIR DONNEUR =====*/
         /*===== DEVENIR DONNEUR =====*/ 
         Route::get('/devenir-donneur', [SimplyRouteController::class,'devenir_donneur'])->name('devenir-donneur-show'); 
+    /*===== ACTUALITE =====*/

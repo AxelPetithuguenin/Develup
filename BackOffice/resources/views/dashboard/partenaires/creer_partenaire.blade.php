@@ -15,7 +15,7 @@
 
             <!-- // LABEL NOM PARTENAIRE // -->
             <div class="form-group">
-                <label for="nom_partenaire" class="text label-dashboard">Nom du partenaire</label>
+                <label for="nom_partenaire" class="text label-dashboard">Titre de l'actualité</label>
                 <input class="input-box text" type="text" name="nom_partenaire" id="nom_partenaire" value="{{ old('nom_partenaire') }}"/>
                 @error('nom_partenaire')
                     <div class="error-text">{{ $message }}</div>

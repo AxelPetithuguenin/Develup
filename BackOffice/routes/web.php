@@ -28,4 +28,6 @@ Route::resource('liens', LiensController::class);
 
 /*===== TEMOIGNAGE =====*/
 Route::resource('dashboard/temoignage', TemoignageController::class);
+
+/*===== ACTUALITE =====*/
 Route::resource('/actualites', ActualiteController::class);
