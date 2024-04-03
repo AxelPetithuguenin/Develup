@@ -1773,63 +1773,82 @@ hr{
     width: 100%;
     height: auto;
 }
-.box-image{
+.card-box-image {
     width: 200px;
-    height: 200px;
-    margin: 10px;
+    height: 225px;
+    margin: 15px;
+    perspective: 1000px; 
+}
+.card-inner{
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--primary-color);
+    border-radius: 15px;
+    background-color: var(--white-color);
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+.card-box-image:hover .card-inner {
+    transform: rotateY(180deg); 
+}
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    backface-visibility: hidden; 
+}
+.card-front {
+    transform: rotateY(0deg); 
+}
+.card-back {
+    transform: rotateY(180deg);
+}
+.card-back-container{
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
+}
+.back-header-card-container{
+    position: relative;
+    width: 100%;
+    margin: 35px 0 10px;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
-.box-image img{
-    width: 175px;
-    height: 175px;
-    object-fit: contain;
-    transition: .3s ease-in;
+.green-line{
+    width: 15%;
+    margin: 0 7px;
+    height: 2px;
+    background-color: var(--primary-color);
 }
-.box-image:hover img{
-    width: 200px;
-    height: 200px;
+.icone-partenaire{
+    margin: 5px;
+    width: 20px;
+    filter: invert(46%) sepia(76%) saturate(425%) hue-rotate(86deg) brightness(96%) contrast(94%);
+    transition: .2s ease-in;
+}
+.icone-partenaire:hover{
+    filter: invert(46%) sepia(87%) saturate(1716%) hue-rotate(355deg) brightness(94%) contrast(84%);
+}
+.social-netword-card-container{
+    width: 100%;
+}
+.card-box-image img {
+    width: 85%;
+    height: auto;
 }
     /* BREAKPOINTS */
 @media screen and (max-width: 1120px){
-    .box-image{
-        width: 175px;
-        height: 175px;
-    }
-    .box-image img{
-        width: 150px;
-        height: 150px;
-    }
 }
 @media screen and (max-width: 867px){
-    .box-image{
-        width: 150px;
-        height: 150px;
-        margin: 7px;
-    }
-    .box-image img{
-        width: 125px;
-        height: 125px;
-    }
 }
 @media screen and (max-width: 500px){
-    .box-image{
-        width: 100px;
-        height: 100px;
-        margin: 4px;
-    }
-    .box-image img{
-        width: 80px;
-        height: 80px;
-    }
 }
 @media screen and (max-width: 450px){
-    .box-image{
-        width: 90px;
-        height: 90px;
-    }
+
 }
 
 
