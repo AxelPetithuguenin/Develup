@@ -13,7 +13,7 @@ class ActualiteController extends Controller
     public function index()
     {
         $actualites = Actualite::all();
-        return view('actualite.index', compact('actualites'));
+        return view('dashboard.actualite.index', compact('actualites'));
     }
 
     /**
@@ -21,7 +21,7 @@ class ActualiteController extends Controller
      */
     public function create()
     {
-        return view('actualite.create');
+        return view('dashboard.actualite.create');
     }
 
     /**
@@ -46,7 +46,7 @@ class ActualiteController extends Controller
  
         $nv_actualite->save();
  
-        return redirect()->route('actualites.index')->with('success', 'Actualité créé');
+        return redirect()->route('dashboard.actualites.index')->with('success', 'Actualité créé');
     }
 
     /**
@@ -63,7 +63,7 @@ class ActualiteController extends Controller
     public function edit(string $id)
     {
         $actualite = Actualite::findOrFail($id);
-        return  view("actualite.edit", compact('actualite'));
+        return  view("dashboard.actualite.edit", compact('actualite'));
     }
 
     /**
@@ -92,7 +92,7 @@ class ActualiteController extends Controller
  
         $actualite->save();
  
-        return redirect()->route('actualites.index')->with('success', 'Actualité modifié');
+        return redirect()->route('dashboard.actualites.index')->with('success', 'Actualité modifié');
     }
 
     /**
@@ -105,6 +105,6 @@ class ActualiteController extends Controller
             Storage::disk('public')->delete($actualite->image);
         }
         $actualite->delete();
-        return redirect()->route('actualites.index')->with('success', 'Actualité supprimé');
+        return redirect()->route('dashboard.actualites.index')->with('success', 'Actualité supprimé');
     }
 }

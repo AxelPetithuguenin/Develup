@@ -27,7 +27,7 @@
             <div class="sidebar-link-container">
                 <ul>
                     <li>
-                        <a href="{{route('actualite.index')}}" class="text sidebar-link"><i class="ri-calendar-fill"></i>
+                        <a href="{{route('actualites.index')}}" class="text sidebar-link"><i class="ri-calendar-fill"></i>
                             <p class="sidebar-text">Actualite</p>
                         </a>
                     </li>

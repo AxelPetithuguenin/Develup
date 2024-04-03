@@ -12,8 +12,8 @@
     value="{{$actualite->_date_actualite}}" />
     </br>
     </br>
-    <input type="text" name="contenu_actualite" id="contenu_actualite" placeholder="contenu de l'actualite"
-    value="{{$actualite->contenu_actualite}}" />
+    <textarea type="text" name="contenu_actualite" id="contenu_actualite" placeholder="contenu de l'actualite"
+    value="{{$actualite->contenu_actualite}}"></textarea>
     </br>
     </br>
     <input type="file" class="form-control" id="image_actualite" name="image_actualite">

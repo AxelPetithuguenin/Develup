@@ -9,7 +9,7 @@
     <input type="date" name="date_actualite" id="date_actualite" placeholder="Date de l'actualite">
     </br>
     </br>
-    <input type="text" name="contenu_actualite" id="contenu_actualite" placeholder="contenu de l'actualite">
+    <textarea type="text" name="contenu_actualite" id="contenu_actualite" placeholder="contenu de l'actualite"></textarea>
     </br>
     </br>
     <input type="file" class="form-control" id="image_partenaire" name="image_actualite">
