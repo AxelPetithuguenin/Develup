@@ -1,6 +1,8 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TemoignageController;
+use App\Http\Controllers\PartenairesController;
+use App\Http\Controllers\LiensController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,9 +20,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+/*===== PARTENAIRES =====*/
+Route::resource('dashboard/partenaires', PartenairesController::class);
+/*===== LIENS =====*/
+Route::resource('liens', LiensController::class);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -32,3 +35,5 @@ Route::resource('/bureau', [BureauController::class, 'create']);
 
 
 require __DIR__.'/auth.php';
+/*===== TEMOIGNAGE =====*/
+Route::resource('dashboard/temoignage', TemoignageController::class);
