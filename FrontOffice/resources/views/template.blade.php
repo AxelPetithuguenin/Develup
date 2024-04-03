@@ -91,7 +91,7 @@
                     </ul>
                 </div>
                 <div class="nav-donneur">
-                    <a href="#" class="btn nav-btn text">Devenir donneur</a>
+                    <a href="https://www.dondemoelleosseuse.fr/" class="btn nav-btn text">Devenir donneur</a>
                 </div>
             </div>
             <div class="menu-hamburger">

@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SimplyRouteController;
     use App\Http\Controllers\PartenairesController;
+    use App\Http\Controllers\TemoignageController;
+
 
 
 /*
@@ -27,11 +29,11 @@ Route::get('/', function () {
     /*===== ACCUEIL PAGE =====*/
     Route::get('/engagement-leucemie', [SimplyRouteController::class,'accueil'])->name('accueil-show'); 
 
-    /*===== TEMOIGNAGE =====*/
+    /*===== TEMOIGNAGE =====*/  
         /*===== TEMOIGNAGE PAGE =====*/ 
-        Route::get('/temoignage', [SimplyRouteController::class,'temoignage'])->name('temoignage-show'); 
+        Route::get('/temoignage', [TemoignageController::class, 'index'])->name('temoignage-show');
         /*===== PERSONNAL TEMOIGNAGE PAGE =====*/ 
-        Route::get('/temoignage', [SimplyRouteController::class,'temoignage'])->name('temoignage-show'); 
+        Route::get('/temoignage/{id}', [TemoignageController::class, 'show'])->name('personnal_temoignage');
 
     /*===== ACTIONS =====*/
 

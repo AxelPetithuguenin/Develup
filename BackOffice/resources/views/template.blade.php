@@ -32,7 +32,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="text sidebar-link">
+                        <a href="{{route('temoignage.index')}}" class="text sidebar-link">
                             <i class="ri-chat-3-fill"></i>
                             <p class="sidebar-text">Témoignages</p>
                         </a>
