@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('partenaire_id')->constrained('partenaires', 'id');
             $table->foreignId('lien_id')->constrained('liens', 'id')->cascadeOnDelete();
             $table->primary(['partenaire_id', 'lien_id']);
-            $table->string('lien');
+            $table->string('lien'); 
             $table->timestamps();
         });
     }

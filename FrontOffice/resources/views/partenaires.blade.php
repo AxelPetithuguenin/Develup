@@ -2,46 +2,65 @@
 
 @section('content')
 
-    <!-- // NOS PARTENAIRES // -->
-    <section class="container-page">
-        <div class="header-page">
-            <div class="header-page-container">
-                <div class="header-title-container">
-                    <h3 class="middle-title">
-                        Nos partenaires
-                    </h3>
-                </div>
-                <div class="header-text-container">
-                    <p class="text">
-                        Pour en savoir plus sur notre partenaire engagé qui rend 
-                        possible chacune de nos actions, cliquez sur l'image ci-dessous. 
-                        Explorez leur engagement envers notre cause et la manière dont
-                        ils contribuent à faire une différence significative.
-                    </p>
-                </div>
+<!-- // NOS PARTENAIRES // -->
+<section class="container-page">
+    <div class="header-page">
+        <div class="header-page-container">
+            <div class="header-title-container">
+                <h3 class="middle-title">
+                    Nos partenaires
+                </h3>
+            </div>
+            <div class="header-text-container">
+                <p class="text">
+                    Pour en savoir plus sur notre partenaire engagé qui rend 
+                    possible chacune de nos actions, cliquez sur l'image ci-dessous. 
+                    Explorez leur engagement envers notre cause et la manière dont
+                    ils contribuent à faire une différence significative.
+                </p>
             </div>
         </div>
-        <div class="partenaire-container">
-            <div class="wrap">
-                <div class="box-image">
-                    <a href="https://www.constructions-chauvin.fr/">
-                        <img src="assets/img/partenaires/Chauvin.png" alt="image de nos partenaires">
-                    </a>
-                </div>
+    </div>
+    <div class="partenaire-container">
+        <div class="wrap">
+            @foreach($partenaires as $partenaire)
+                <div class="card-box-image">
+                    <div class="card-inner">
 
-                <div class="box-image">
-                    <a href="https://www.credit-agricole.fr/ca-franchecomte/particulier/agence/franche-comte.html/">
-                        <img src="assets/img/partenaires/Credit-Agricole.png" alt="image de nos partenaires">
-                    </a>
-                </div>
+                        <!-- // FRONT // -->
+                        <div class="card-front">
+                            <img class="dashboard-image" src="{{ asset('BackOffice/public/storage/logos/' . $partenaire->logo_partenaire) }}" alt="{{ $partenaire->nom_partenaire }}">
+                            <p class="text" style="text-align: center;">
+                                {{ $partenaire->nom_partenaire }}
+                            </p>
+                        </div>
 
-                <div class="box-image">
-                    <a href="https://www.diager-industrie.com/">
-                        <img src="assets/img/partenaires/Diager.png" alt="image de nos partenaires">
-                    </a>
+                        <!-- // BACK // -->
+                        <div class="card-back">
+                            <div class="card-back-container">
+                                <div class="back-header-card-container">
+                                    <div class="green-line"></div>
+                                    <p class="text lg">
+                                        Réseaux Sociaux
+                                    </p>
+                                    <div class="green-line"></div>
+                                </div>
+                                <div class="social-netword-card-container">
+                                    <div class="wrap">
+                                        @foreach($partenaire->liens as $lien)
+                                            <a href="{{ $lien->pivot->lien }}" target="_blank" class="icone-partenaire">
+                                                <img src="{{ asset('BackOffice/public/storage/icone/' . $lien->icone) }}" alt="{{ $lien->nom }}">
+                                            </a>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            @endforeach
         </div>
-    </section>
+    </div>
+</section>
 
 @stop

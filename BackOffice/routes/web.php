@@ -1,7 +1,9 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SimplyRouteController;
+    use App\Http\Controllers\PartenairesController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,18 +16,47 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/*===== LANDING PAGE (ACCUEIL PAGE) =====*/
 Route::get('/', function () {
-    return view('welcome');
+    return view('accueil');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+/*===== NAVBAR ROUTES =====*/
 
-require __DIR__.'/auth.php';
+    /*===== ACCUEIL PAGE =====*/
+    Route::get('/engagement-leucemie', [SimplyRouteController::class,'accueil'])->name('accueil-show'); 
+
+    /*===== TEMOIGNAGE =====*/
+        /*===== TEMOIGNAGE PAGE =====*/ 
+        Route::get('/temoignage', [SimplyRouteController::class,'temoignage'])->name('temoignage-show'); 
+        /*===== PERSONNAL TEMOIGNAGE PAGE =====*/ 
+        Route::get('/temoignage', [SimplyRouteController::class,'temoignage'])->name('temoignage-show'); 
+
+    /*===== ACTIONS =====*/
+
+
+    
+    /*===== DON MOELLE OSSEUSE =====*/
+        /*===== DON MOELLE OSSEUSE PAGE =====*/ 
+        Route::get('/don-moelle-osseuse', [SimplyRouteController::class,'don_moelle_osseuse'])->name('don-moelle-osseuse-show'); 
+        /*===== AGE DON MOELLE OSSEUSE PAGE =====*/ 
+        Route::get('/pourquoi-18-35-ans-don-moelle-osseuse', [SimplyRouteController::class,'age_don_moelle_osseuse'])->name('age-moelle-osseuse-show'); 
+
+    /*===== ASSOCIATION =====*/
+        /*===== PRESENTATION PAGE =====*/ 
+        Route::get('/presentation-bureau', [SimplyRouteController::class,'presentation'])->name('presentation-show'); 
+        /*===== PARTENAIRES =====*/ 
+        Route::get('/partenaires', [PartenairesController::class,'index'])->name('partenaires-show'); 
+        /*===== RESULTATS PAGE =====*/ 
+        Route::get('/resultats', [SimplyRouteController::class,'resultats'])->name('resultats-show'); 
+        /*===== ADHERER PAGE  =====*/ 
+        Route::get('/adherer', [SimplyRouteController::class,'adherer'])->name('adherer-show'); 
+
+    /*===== NOUS CONTACTER =====*/
+        /*===== NOUS CONTACTER PAGE =====*/ 
+        Route::get('/nous-contacter', [SimplyRouteController::class,'contact'])->name('contact-show'); 
+    
+    /*===== DEVENIR DONNEUR =====*/
+        /*===== DEVENIR DONNEUR =====*/ 
+        Route::get('/devenir-donneur', [SimplyRouteController::class,'devenir_donneur'])->name('devenir-donneur-show'); 
