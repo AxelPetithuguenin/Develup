@@ -1,13 +1,17 @@
-<form action="{{ route('store') }}" method="post">
-        @csrf
+<h2> Bureau - création</h2><br>
+<form action="{{ route('store') }}" method="post"enctype="multipart/form-data">
+        
+        <label>
         Nom : <input type="text" name="nom" />
-        @error ('nom')
-            {{$message}}
-            @enderror
+        </label><br/><br/>
+        
+            <label>
         Prénom : <input type="text" name="prenom" />
-        @error ('prenom')
-            {{$message}}
+        </label><br/><br/>
+    
+        <label>
         Fonction : <input type="text" name="libelle">
-            @enderror
+        </label><br><br>
+            
         <input type="submit" value="Créer" />
     </form>

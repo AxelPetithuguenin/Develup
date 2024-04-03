@@ -11,7 +11,8 @@ class BureauController extends Controller
      */
     public function index()
     {
-        //
+        $bureaux=Bureau::all();
+        return view('bureau.bureau',compact('bureaux'));
     }
 
     /**
@@ -19,7 +20,7 @@ class BureauController extends Controller
      */
     public function create()
     {
-        
+        return view('bureau.');
     }
 
     /**
