@@ -10,13 +10,13 @@
     <title>Accueil-Engagement-Leucemie-ED</title>
 
     <!-- // LINK CSS // -->
-    <link rel="stylesheet" href="./assets/css/style.css"/>  
+    <link rel="stylesheet" href="{{ asset('FrontOffice/public/assets/css/style.css') }}">
     <!-- CDN REMIXICON // -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" integrity="sha512-HXXR0l2yMwHDrDyxJbrMD9eLvPe3z3qL3PPeozNTsiHJEENxx8DH2CxmV05iwG0dwoz5n4gQZQyYLUNt1Wdgfg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- // CSS SWIPER JS // -->
-    <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="{{ asset('FrontOffice/public/assets/css/swiper-bundle.min.css')}}"/>
     <!-- // FAVICON  // -->
-    <link rel="shortcut icon" href="./assets/img/logo.png"/>
+    <link rel="shortcut icon" href="{{ asset('FrontOffice/public/assets/img/logo/logo.png') }}"/>
 
 </head>
 <body>
@@ -27,7 +27,7 @@
             <div class="logo">
                 <div class="background-logo">
                     <a href="{{route('accueil-show')}}" class="logo-img">
-                        <img src="./assets/img/logo/logo.png" alt="logo-Engagement-Leucemie" class="logo-el"/>            
+                        <img src="{{ asset ('FrontOffice/public/assets/img/logo/logo.png') }}" alt="logo-Engagement-Leucemie" class="logo-el"/>            
                     </a>
                 </div>
             </div>
@@ -116,7 +116,7 @@
             <div class="row">
                 <div class="footer-container logo-footer">
                     <a href="#" class="logo-img-footer">
-                        <img src="./assets/img/logo/dark-logo.png" alt="dark-logo"/>
+                        <img src="{{ asset ('FrontOffice/public/assets/img/logo/dark-logo.png') }}" alt="dark-logo"/>
                     </a>
                 </div>
                 <div class="footer-container">
@@ -151,12 +151,12 @@
     @show
 
     <!-- // SCRIPT // -->
-    <script src="./assets/js/navbar.js"></script>
+    <script src="{{ asset ('FrontOffice/public/assets/js/navbar.js') }}"></script>
     <script src="./assets/js/scroll-down.js"></script>
 
     <!-- // SWIPER JS // -->
-    <script src="./assets/js/swiper-bundle.min.js"></script>
-    <script src="./assets/js/slider.js"></script>
+    <script src="{{ asset ('FrontOffice/public/assets/js/swiper-bundle.min.js')}}"></script>
+    <script src="{{ asset ('FrontOffice/public/assets/js/slider.js') }}"></script>
 
     <!-- // SCROLLREVEAL // -->
     <script src="https://unpkg.com/scrollreveal"></script>
