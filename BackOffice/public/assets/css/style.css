@@ -108,7 +108,6 @@ header{
     border: 2px solid var(--primary-orange);
     transition: .5s ease-in-out;
 }
-
     /* BREAKPOINT */ 
 @media screen and (max-width: 1120px){
     .text{
@@ -120,13 +119,11 @@ header{
         font-size: .875em;
     }
 }
-
 @media screen and (max-width: 450px){
     .text{
         font-size: .8em;
     }
 }
-
 
 .green-btn{
     padding: 7px 13px;
@@ -191,6 +188,9 @@ header{
 }
 .sidebar-link{
     display: flex;
+}
+.sidebar-link-hidden {
+    display: none;
 }
 .sidebar-link-container ul li:hover{
     background-color: var(--dark-green);
@@ -410,9 +410,6 @@ svg{
     margin-top: 50px;
 }
 
-
-
-
 /* LABEL + INPUT */
 .mgb-15{
     position: relative;
@@ -482,6 +479,11 @@ svg{
     border-bottom: 2px solid var(--primary-color);
     background-color: var(--background-color);
     outline: none;
+}
+textarea{
+    width: 450px;
+    height: 500px !important;
+    resize: none;
 }
 
     /* BREAKPOINTS */

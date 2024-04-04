@@ -609,6 +609,28 @@ header{
         font-size: .8em;
     }
 }
+/* BTN REMONTE SCROLL */
+#btnRemonter{
+    position: fixed;
+    display: none;
+    width: 45px;
+    height: 45px;
+    bottom: 20px;
+    right: 20px;
+    border: none;
+    border-radius: 50%;
+    color: var(--white-color);
+    background-color: var(--primary-color);
+    z-index: 5;
+    cursor: pointer;
+}
+    /* BREAKPOINTS */
+@media screen and (max-width: 1120px){
+    #btnRemonter{
+        width: 35px;
+        height: 35px;
+    }
+}
 
 /* PROCHAINES ACTIONS - ACTUALITE - TEMOIGNAGES */
 .prochaines-actions, 
@@ -1428,6 +1450,16 @@ hr{
 .paragraphe-text{
     margin: 25px 0;
 }
+textarea {
+    width: 100%;
+    min-height: 100vh;
+    border: none;
+    resize: none;
+    font-family: 'Poppins';
+    outline: none;
+    background-color: var(--background-color);
+    overflow: hidden;
+}
     /* BREAKPOINTS */
 @media screen and (max-width: 767px){
     .header-personnal-temoignage-page-content{
@@ -1849,6 +1881,11 @@ hr{
 }
 @media screen and (max-width: 450px){
 
+}
+
+/* ADHERER */
+.error-text{
+    color: var(--red-color);
 }
 
 

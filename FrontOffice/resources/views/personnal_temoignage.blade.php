@@ -12,11 +12,12 @@
                 {{ $temoignage->titre_temoignage }}
             </h3>
         </div>
-        <div class="personnal-temoignage-text">
-            <p class="text dg paragraphe-text">
+        <div class="personnal-temoignage-text ">
+            <textarea class="text dg paragraphe-text text" readonly>
                 {{ $temoignage->contenu_temoignage }} 
-            </p>
+            </textarea>
         </div>      
     </section>
 
 @stop
+    

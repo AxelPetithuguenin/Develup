@@ -39,7 +39,7 @@
                             </p>
                             <p class="text">
                                 <i class="ri-double-quotes-r lg"></i>
-                                {{ $temoignage->contenu_temoignage }} 
+                                {{ implode(' ', array_slice(explode(' ', $temoignage->contenu_temoignage), 0, 5)) }}{{ str_word_count($temoignage->contenu_temoignage) > 5 ? '' : '' }}
                                 <a href="{{ route('personnal_temoignage', ['id' => $temoignage->id]) }}">
                                     <span class="voir-plus-text" style="color: var(--gray-color);">Lire plus...</span>
                                 </a>

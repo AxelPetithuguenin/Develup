@@ -81,7 +81,7 @@
                                             <a href="#" class="text">Résultat</a>
                                         </li>
                                         <li>
-                                            <a href="#" class="text">Adhérer</a>
+                                            <a href="{{route('adherer-show')}}" class="text">Adhérer</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -107,6 +107,11 @@
     <!-- // CONTAINER PAGE // -->
     @yield ('content')
 
+    <!-- // BTN REMONTE SCROLL // -->
+    <button id="btnRemonter" onclick="remonteurHaut()" class="text">
+        <i class="ri-arrow-up-line"></i>
+    </button> 
+
     <!-- // FOOTER // -->
     @section ('footer')      
         <footer class="footer">
@@ -115,7 +120,7 @@
             </svg> 
             <div class="row">
                 <div class="footer-container logo-footer">
-                    <a href="#" class="logo-img-footer">
+                    <a href="{{route('accueil-show')}}" class="logo-img-footer">
                         <img src="{{ asset ('FrontOffice/public/assets/img/logo/dark-logo.png') }}" alt="dark-logo"/>
                     </a>
                 </div>
@@ -127,7 +132,7 @@
                         <li><a href="#" class="text">Actions</a></li>
                         <li><a href="{{route('don-moelle-osseuse-show')}}" class="text">Don de Moelle Osseuse</a></li>
                         <li><a href="#" class="text">Nous contacter</a></li>
-                        <li><a href="#" class="text">Devenir donneur</a></li>
+                        <li><a href="https://www.dondemoelleosseuse.fr/" class="text">Devenir donneur</a></li>
                     </ul>
                 </div>
                 <div class="footer-container">
@@ -150,16 +155,18 @@
         </footer>
     @show
 
+    <!-- // SWIPER JS // -->
+    <script src="{{ asset ('FrontOffice/public/assets/js/swiper-bundle.min.js')}}"></script>
+
     <!-- // SCRIPT // -->
     <script src="{{ asset ('FrontOffice/public/assets/js/navbar.js') }}"></script>
     <script src="./assets/js/scroll-down.js"></script>
-
-    <!-- // SWIPER JS // -->
-    <script src="{{ asset ('FrontOffice/public/assets/js/swiper-bundle.min.js')}}"></script>
-    <script src="{{ asset ('FrontOffice/public/assets/js/slider.js') }}"></script>
+    <script src="{{ asset ('FrontOffice/public/assets/js/remonte_scroll.js') }}"></script>
+    <script src="{{ asset ('FrontOffice/public/assets/js/slider.js') }}"></script> <!-- Assurez-vous que ce fichier contient le code JavaScript pour votre slider -->
 
     <!-- // SCROLLREVEAL // -->
     <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="./assets/js/scroll.js"></script>
+    <script src="{{ asset ('FrontOffice/public/assets/js/scroll.js') }}"></script>
+
 </body>
 </html>

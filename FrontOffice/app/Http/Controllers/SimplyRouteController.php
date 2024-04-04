@@ -8,18 +8,6 @@ class SimplyRouteController extends Controller
 {
     /*===== NAVBAR ROUTES =====*/
 
-    /*===== ACUUEIL =====*/
-        /*===== ACUUEIL PAGE =====*/ 
-        function accueil(){
-            return view('accueil'); 
-        }
-
-    /*===== TEMOIGNAGE =====*/
-        /*===== TEMOIGNAGE PAGE =====*/ 
-        function temoignage(){
-            return view('temoignage_page'); 
-        }
-
     /*===== DON MOELLE OSSEUSE =====*/
         /*===== DON MOELLE OSSEUSE PAGE =====*/ 
         function don_moelle_osseuse(){
@@ -35,19 +23,14 @@ class SimplyRouteController extends Controller
         function presentation(){
             return view('presentation'); 
         }
-        /*===== PARTENAIRES =====*/ 
-        function partenaires(){
-            return view('partenaires'); 
-        }
+
         /*===== RESULTATS PAGE =====*/ 
         function resultats(){
             return view('don_moelle_osseuse'); // A FAIRE LA VIEW
         }
-        /*===== ADHERER PAGE  =====*/ 
-        function adherer(){
-            return view('don_moelle_osseuse'); // A FAIRE LA VIEW
-        }
-    
+
+
+
     /*===== NOUS CONTACTER =====*/
         /*===== NOUS CONTACTER PAGE =====*/ 
         function contact(){

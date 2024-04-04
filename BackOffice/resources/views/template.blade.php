@@ -55,6 +55,12 @@
                             <p class="sidebar-text">Partenaires</p>
                         </a>
                     </li>
+                    <li>
+                        <a href="{{route('adherent.index')}}" class="text sidebar-link">
+                            <i class="ri-user-heart-line"></i>
+                            <p class="sidebar-text">Adhérents</p>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -98,12 +104,17 @@
     <script>
         const menuHamburger = document.querySelector('.menu-hamburger-dashboard');
         const sidebar = document.querySelector('.sidebar');
-       
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+
         menuHamburger.addEventListener('click', () => {
-          
             sidebar.classList.toggle('sidebar-active');
+            // Ajouter ou supprimer une classe pour les liens de la sidebar
+            sidebarLinks.forEach(link => {
+                link.classList.toggle('sidebar-link-hidden');
+            });
         });
     </script>
+
 
     <script>
         // Tri ordre alphabétique ou inverse 

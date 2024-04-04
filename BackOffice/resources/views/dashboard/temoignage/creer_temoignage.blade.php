@@ -24,7 +24,7 @@
 
             <!-- // LABEL NOM // -->
             <div class="form-group">
-                <label for="prenom_temoignage" class="text label-dashboard">Nom du témoins</label>
+                <label for="prenom_temoignage" class="text label-dashboard">Nom du témoin</label>
                 <input type="text" class="input-box text" name="prenom_temoignage" id="prenom_temoignage" value="{{ old('prenom_temoignage') }}"/>
                 @error('prenom_temoignage')
                     <div class="error-text">{{ $message }}</div>
@@ -49,7 +49,7 @@
                 @enderror
             </div>
 
-            <!-- // LABEL CONTENUE // -->
+            <!-- // LABEL CONTENU // -->
             <div class="form-group">
                 <label for="contenu_temoignage" class="text label-dashboard">Contenu du témoignage</label>
                 <textarea class="input-box text" name="contenu_temoignage" id="contenu_temoignage"></textarea>
@@ -58,6 +58,7 @@
                 @enderror
             </div>
 
+
             <!-- // BOUTON DE SOUMISSION DU FORMULAIRE // -->
             <div style="margin: 25px 0 25px 0;">
                 <button type="submit" class="btn green-btn text">Créer ce témoignage</button>
@@ -65,4 +66,13 @@
 
         </div>
     </form>
+
+    <!-- // SCRIPT // -->
+    <script src="{{ asset('assets/ckeditor/ckeditor.js') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            CKEDITOR.replace('contenu_temoignage');
+        });
+    </script>
+
 @stop

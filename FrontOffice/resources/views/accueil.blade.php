@@ -255,95 +255,44 @@
         <div class="temoignage-content">
             <div class="slider-temoignage swiper">
                 <div class="slider-temoignage-container">
-                    <a href="{{route('temoignage-show')}}" class="voir-plus text">Voir plus...</a>
+                    <a href="{{ route('temoignage-show') }}" class="voir-plus text">Voir plus...</a>
                     <div class="swiper-wrapper">
-                            
-                        <article class="card-temoignage swiper-slide">
-                            <div class="card-temoignage-description">
-                                <div class="card-swiper-image-temoignage">
-                                    <a href="#" class="card-slider-image-link-temoignage">
-                                        <img src="./assets/img/temoignage/pexels-ali-pazani-2613260.jpg" alt="image-de-profil-temoigange" class="picture-profile-card"/>
+                        @foreach($temoignages as $temoignage)
+                        <article class="card-temoignage-page swiper-slide">
+                            <a href="{{ route('personnal_temoignage', ['id' => $temoignage->id]) }}" class="card-slider-image-link-temoignage">
+                                <img src="{{ asset('BackOffice/public/storage/image_temoignage/' . $temoignage->image_temoignage) }}" class="card-image" />
+                            </a>
+                            <div class="card-text-container">
+                                <p class="card-text-title text">
+                                    {{ $temoignage->titre_temoignage }}
+                                </p>
+                                <p class="text">
+                                    <i class="ri-double-quotes-r lg"></i>
+                                    {{ implode(' ', array_slice(explode(' ', $temoignage->contenu_temoignage), 0, 5)) }}{{ str_word_count($temoignage->contenu_temoignage) > 5 ? '...' : '' }}
+                                    <a href="{{ route('personnal_temoignage', ['id' => $temoignage->id]) }}">
+                                        <span class="voir-plus-text" style="color: var(--gray-color);">Lire plus...</span>
                                     </a>
-                                </div>
-                                <div class="card-text">
-                                    <p class="card-title" style="text-align: center;">
-                                        Julie, greffée grâce au don de moelle osseuse de son frère jumeau Nicolas
-                                    </p>
-                                    <p class="text">
-                                        <i class="ri-double-quotes-r lg"></i>
-                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus excepturi 
-                                        voluptates 
-                                        <a href="#">
-                                            <span class="voir-plus-text" style="color: var(--gray-color);">Lire plus...</span>
-                                        </a>
-                                    </p>
-                                </div>
+                                </p>
                             </div>
                         </article>
-
-                        <article class="card-temoignage swiper-slide">
-                            <div class="card-temoignage-description">
-                                <div class="card-swiper-image-temoignage">
-                                    <a href="#" class="card-slider-image-link-temoignage">
-                                        <img src="./assets/img/temoignage/pexels-ali-pazani-2613260.jpg" alt="image-de-profil-temoigange" class="picture-profile-card"/>
-                                    </a>
-                                </div>
-                                <div class="card-text">
-                                    <p class="card-title" style="text-align: center;">
-                                        Julie, greffée grâce au don de moelle osseuse de son frère jumeau Nicolas
-                                    </p>
-                                    <p class="text">
-                                        <i class="ri-double-quotes-r lg"></i>
-                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus excepturi 
-                                        voluptates 
-                                        <a href="#">
-                                            <span class="voir-plus-text" style="color: var(--gray-color);">Lire plus...</span>
-                                        </a>
-                                    </p>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="card-temoignage swiper-slide">
-                            <div class="card-temoignage-description">
-                                <div class="card-swiper-image-temoignage">
-                                    <a href="#" class="card-slider-image-link-temoignage">
-                                        <img src="./assets/img/temoignage/pexels-ali-pazani-2613260.jpg" alt="image-de-profil-temoigange" class="picture-profile-card"/>
-                                    </a>
-                                </div>
-                                <div class="card-text">
-                                    <p class="card-title" style="text-align: center;">
-                                        Julie, greffée grâce au don de moelle osseuse de son frère jumeau Nicolas
-                                    </p>
-                                    <p class="text">
-                                        <i class="ri-double-quotes-r lg"></i>
-                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus excepturi 
-                                        voluptates 
-                                        <a href="#">
-                                            <span class="voir-plus-text" style="color: var(--gray-color);">Lire plus...</span>
-                                        </a>
-                                    </p>
-                                </div>
-                            </div>
-                        </article>
-                        
+                        @endforeach
                     </div>
                 </div>
-    
+
                 <!-- // NEXT - PREV BTN // -->
                 <div class="swiper-button-next-temoignage swiper-button-next">
                     <i class="ri-arrow-right-s-line"></i>
                 </div>
-    
+
                 <div class="swiper-button-prev-temoignage swiper-button-prev">
                     <i class="ri-arrow-left-s-line"></i>
                 </div>
-    
+
                 <!-- // DOT // -->
                 <div class="swiper-pagination-temoignage swiper-pagination"></div>
             </div>
         </div>
-    </section>  
+    </section>
 
     <!-- // SCRIPT // -->
         <script>

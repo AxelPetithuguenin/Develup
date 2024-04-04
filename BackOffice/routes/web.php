@@ -3,7 +3,10 @@
 use App\Http\Controllers\TemoignageController;
 use App\Http\Controllers\PartenairesController;
 use App\Http\Controllers\LiensController;
+use App\Http\Controllers\AdherentController;
+use App\Models\Adherent;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +27,7 @@ Route::get('/', function () {
 Route::resource('dashboard/partenaires', PartenairesController::class);
 /*===== LIENS =====*/
 Route::resource('liens', LiensController::class);
-
 /*===== TEMOIGNAGE =====*/
 Route::resource('dashboard/temoignage', TemoignageController::class);
+/*===== LIENS =====*/
+Route::resource('dashboard/adherent', AdherentController::class);

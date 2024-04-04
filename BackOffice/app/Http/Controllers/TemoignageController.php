@@ -160,7 +160,7 @@ class TemoignageController extends Controller
             // Trouver le partenaire à supprimer
             $temoignage = Temoignage::find($id);
             
-            // Vérifier si le partenaire existe
+            // Vérifier si le temoignage existe
             if (!$temoignage) {
                 return redirect()->route('temoignage.index')->with('error', 'Témoignage non trouvé!');
             }
@@ -171,10 +171,10 @@ class TemoignageController extends Controller
                 unlink($logoPath);
             }
         
-            // Supprimer le partenaire
+            // Supprimer le temoignage
             $temoignage->delete();
         
-            return redirect()->route('temoignage.index')->with('success', 'T2moignage supprimé avec succès!');
+            return redirect()->route('temoignage.index')->with('success', 'Témoignage supprimé avec succès!');
         } 
         catch (\Exception $e) {
             return redirect()->back()->with('error', 'Une erreur s\'est produite.');

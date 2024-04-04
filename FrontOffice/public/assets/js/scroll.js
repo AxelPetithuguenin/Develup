@@ -75,17 +75,21 @@ const sr = ScrollReveal();
 
     // PERSONNAL TEMOIGNAGE PAGE //
     sr.reveal('.header-personnal-temoignage-page-content', {
-        duration: 1500,
-        origin: 'left',
-        distance: '50px',
-        delay: 300
+        delay: 200,
+        duration: 1000,
+        origin: 'bottom',
+        distance: '20px',
+        easing: 'ease-in-out',
+        reset: true
     });
 
     sr.reveal('.personnal-temoignage-text', {
-        duration: 1500,
-        origin: 'right',
-        distance: '50px',
-        delay: 300
+        delay: 400,
+        duration: 1000,
+        origin: 'bottom',
+        distance: '20px',
+        easing: 'ease-in-out',
+        reset: true
     });
 
     // DON DE MOELLE OSSEUSE //
