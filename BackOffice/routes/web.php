@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\ActualiteController;
 use App\Http\Controllers\TemoignageController;
-use App\Http\Controllers\ActualiteController;
 use App\Http\Controllers\PartenairesController;
 use App\Http\Controllers\LiensController;
 use Illuminate\Support\Facades\Route;
