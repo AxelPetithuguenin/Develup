@@ -10,7 +10,7 @@ class ActualiteController extends Controller
     // RETOURNE TOUTES LES INFORMATIONS DES ACTUALITES
     public function index()
     {
-    $actualite =  Actualite::all();
-    return view('/partenaires', compact('actualite'));
+    $actualites =  Actualite::all();
+    return view('/actualite', compact('actualites'));
     }
 }

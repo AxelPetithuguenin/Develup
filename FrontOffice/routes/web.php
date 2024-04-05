@@ -1,9 +1,10 @@
 <?php
 
+use App\Http\Controllers\ActualiteController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SimplyRouteController;
     use App\Http\Controllers\PartenairesController;
-
+use App\Models\Actualite;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,3 +62,4 @@ Route::get('/', function () {
         /*===== DEVENIR DONNEUR =====*/ 
         Route::get('/devenir-donneur', [SimplyRouteController::class,'devenir_donneur'])->name('devenir-donneur-show'); 
     /*===== ACTUALITE =====*/
+        Route::get('/actualite', [ActualiteController::class,'index'])->name('actualites-show');

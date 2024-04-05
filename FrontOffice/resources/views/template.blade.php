@@ -78,6 +78,9 @@
                                             <a href="{{route('partenaires-show')}}" class="text">Partenaires</a>
                                         </li>
                                         <li>
+                                            <a href="{{route('actualites-show')}}" class="text">Actualités</a>
+                                        </li>
+                                        <li>
                                             <a href="#" class="text">Résultat</a>
                                         </li>
                                         <li>
