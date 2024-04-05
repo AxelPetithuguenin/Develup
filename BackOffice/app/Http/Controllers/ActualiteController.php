@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Actualite;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 
 class ActualiteController extends Controller
 {
@@ -13,7 +14,7 @@ class ActualiteController extends Controller
     public function index()
     {
         $actualites = Actualite::all();
-        return view('actualite.index', compact('actualites'));
+        return view('dashboard.actualite.index', compact('actualites'));
     }
 
     /**
@@ -21,7 +22,7 @@ class ActualiteController extends Controller
      */
     public function create()
     {
-        return view('actualite.create');
+        return view('dashboard.actualite.create');
     }
 
     /**
@@ -29,9 +30,14 @@ class ActualiteController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'image' => 'image|max:2000',
-        ]);
+        try {
+            // Validation des données
+            $validator = Validator::make($request->all(), [
+                'titre_actualite' => 'required|min:1',
+                '_date_actualite' => 'required|',
+                'contenu_actualite' => 'required|min 5',
+                'image_actualite' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            ]);
  
         //dd($request);
         $nv_actualite = new Actualite();
@@ -46,7 +52,10 @@ class ActualiteController extends Controller
  
         $nv_actualite->save();
  
-        return redirect()->route('actualites.index')->with('success', 'Actualité créé');
+        return redirect()->route('actualites.index')->with('success', 'Actualité créé avec succès!');
+    } catch (\Exception $e) {
+        return redirect()->back()->with('error', 'Une erreur s\'est produite.');
+    }
     }
 
     /**
@@ -63,7 +72,7 @@ class ActualiteController extends Controller
     public function edit(string $id)
     {
         $actualite = Actualite::findOrFail($id);
-        return  view("actualite.edit", compact('actualite'));
+        return  view("dashboard.actualite.edit", compact('actualite'));
     }
 
     /**
@@ -71,9 +80,15 @@ class ActualiteController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $validated = $request->validate([
-            'image' => 'image|max:2000',
-        ]);
+        try {
+            // Valider les données
+            $validator = Validator::make($request->all(), [
+                'titre_actualite' => 'required|min:1',
+                '_date_actualite' => 'required|',
+                'contenu_actualite' => 'required|min 5',
+                'image_actualite' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            ]);
+    
  
         $actualite = Actualite::find($id);
  
@@ -92,7 +107,11 @@ class ActualiteController extends Controller
  
         $actualite->save();
  
-        return redirect()->route('actualites.index')->with('success', 'Actualité modifié');
+        return redirect()->route('actualites.index')->with('success', 'Actualité modifié avec succès!');
+    } 
+    catch (\Exception $e) {
+        return redirect()->back()->with('error', 'Une erreur s\'est produite.');
+    }
     }
 
     /**
@@ -105,6 +124,6 @@ class ActualiteController extends Controller
             Storage::disk('public')->delete($actualite->image);
         }
         $actualite->delete();
-        return redirect()->route('actualites.index')->with('success', 'Actualité supprimé');
+        return redirect()->route('actualites.index')->with('success', 'Actualité supprimé avec succès!');
     }
 }
