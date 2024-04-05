@@ -43,9 +43,9 @@
                                 </div>
                             </div>
                             <div class="card-swiper-image">
-                                <a href="#" class="card-slider-image-link">
-                                <img src="{{ asset('BackOffice/public/storage/image/' . $actualite->image) }}" alt="{{ $actualite->titre_actualite }}"/>
-                                </a>
+                                
+                                <img src="{{ asset('BackOffice/public/storage/image/' . $actualite->image_actualite) }}" alt="{{ $actualite->titre_actualite }}"/>
+                                
                             </div>
                         </article>
                     </div>
