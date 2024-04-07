@@ -52,12 +52,12 @@
             <!-- // LABEL CONTENU // -->
             <div class="form-group">
                 <label for="contenu_temoignage" class="text label-dashboard">Contenu du témoignage</label>
-                <textarea class="input-box text" name="contenu_temoignage" id="contenu_temoignage"></textarea>
+                <textarea class="input-box text text-area-dashboard" name="contenu_temoignage" id="contenu_temoignage" maxlength="6000"></textarea>
+                <div id="characterCount" class="text">6000 caractères restants</div>
                 @error('contenu_temoignage')
                     <div class="error-text">{{ $message }}</div>
                 @enderror
             </div>
-
 
             <!-- // BOUTON DE SOUMISSION DU FORMULAIRE // -->
             <div style="margin: 25px 0 25px 0;">
@@ -74,5 +74,32 @@
             CKEDITOR.replace('contenu_temoignage');
         });
     </script>
+    
+
+    <script>
+    // Fonction pour mettre à jour le nombre de caractères restants
+    function updateCharacterCount() {
+        // Récupérer le contenu du textarea
+        var content = document.getElementById('contenu_temoignage').value;
+        
+        // Récupérer le nombre de caractères
+        var characterCount = content.length;
+
+        // Définir la limite de caractères
+        var maxLength = 6000;
+
+        // Calculer le nombre de caractères restants
+        var remainingCharacters = maxLength - characterCount;
+
+        // Afficher le nombre de caractères restants
+        document.getElementById('characterCount').innerText = remainingCharacters + ' caractères restants';
+    }
+
+    // Appeler la fonction pour mettre à jour le nombre de caractères lorsqu'une touche est relâchée dans le textarea
+    document.getElementById('contenu_temoignage').addEventListener('input', updateCharacterCount);
+
+    // Appeler la fonction une fois au chargement de la page pour initialiser le compteur
+    updateCharacterCount();
+</script>
 
 @stop

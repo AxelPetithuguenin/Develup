@@ -480,12 +480,17 @@ svg{
     background-color: var(--background-color);
     outline: none;
 }
-textarea{
-    width: 450px;
-    height: 500px !important;
+.text-area-dashboard{
+    width: 100%;  
+    min-height: 100vh;  
     resize: none;
+    font-family: 'Poppins';
 }
-
+#characterCount{
+    display: flex;
+    justify-content: end;
+    color: var(--gray-color);
+}
     /* BREAKPOINTS */
 @media screen and (max-width: 1120px) {
     .sidebar-link-container ul li{
