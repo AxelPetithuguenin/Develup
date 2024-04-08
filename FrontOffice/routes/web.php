@@ -3,7 +3,7 @@
 use App\Http\Controllers\ActualiteController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SimplyRouteController;
-    use App\Http\Controllers\PartenairesController;
+use App\Http\Controllers\PartenairesController;
 use App\Models\Actualite;
 
 /*
