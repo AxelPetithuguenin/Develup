@@ -1,8 +1,5 @@
 @extends('template')
-
 @section('content')
-
-
 
     <!-- // ACTUALITE //-->
     <section class="actualite" id="actualite">
