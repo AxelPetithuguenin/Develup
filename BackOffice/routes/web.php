@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ActionController;
 use App\Http\Controllers\ActualiteController;
 use App\Http\Controllers\TemoignageController;
 use App\Http\Controllers\PartenairesController;
@@ -31,3 +32,6 @@ Route::resource('dashboard/temoignage', TemoignageController::class);
 
 /*===== ACTUALITE =====*/
 Route::resource('/actualites', ActualiteController::class);
+
+/*===== ACTION =====*/
+Route::resource('/actions', ActionController::class);
