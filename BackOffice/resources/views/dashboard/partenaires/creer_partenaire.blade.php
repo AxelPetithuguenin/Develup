@@ -54,7 +54,7 @@
             <!-- // LABEL  POUR L'URL DU LIEN // -->
             <div class="form-group">
                 <label for="lien_url" class="text label-dashboard">URL du lien</label>
-                <input type="text" id="lien_url" name="lien_url[]" class="input-box text" value="{{ old('lien_url') }}">
+                <input type="text" id="logo_partenaire" class="input-box text" name="logo_partenaire">
             </div>
 
             <!-- // BOUTON DE SOUMISSION DU FORMULAIRE // -->

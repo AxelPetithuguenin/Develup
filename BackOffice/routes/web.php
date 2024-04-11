@@ -1,13 +1,12 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TemoignageController;
 use App\Http\Controllers\PartenairesController;
 use App\Http\Controllers\LiensController;
 use App\Http\Controllers\AdherentController;
 use App\Models\Adherent;
-use Illuminate\Support\Facades\Route;
-
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,11 +22,25 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/*===== LOGIN =====*/
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
+
+
 /*===== PARTENAIRES =====*/
-Route::resource('dashboard/partenaires', PartenairesController::class);
+Route::resource('dashboard/partenaires', PartenairesController::class)->middleware('auth');
 /*===== LIENS =====*/
-Route::resource('liens', LiensController::class);
+Route::resource('liens', LiensController::class)->middleware('auth');
 /*===== TEMOIGNAGE =====*/
-Route::resource('dashboard/temoignage', TemoignageController::class);
-/*===== LIENS =====*/
-Route::resource('dashboard/adherent', AdherentController::class);
+Route::resource('dashboard/temoignage', TemoignageController::class)->middleware('auth');
+/*===== ADHERENT =====*/
+Route::resource('dashboard/adherent', AdherentController::class)->middleware('auth');

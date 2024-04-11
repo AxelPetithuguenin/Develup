@@ -69,6 +69,7 @@
 
     <!-- // SCRIPT // -->
     <script src="{{ asset('assets/ckeditor/ckeditor.js') }}"></script>
+    
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             CKEDITOR.replace('contenu_temoignage');
@@ -77,29 +78,29 @@
     
 
     <script>
-    // Fonction pour mettre à jour le nombre de caractères restants
-    function updateCharacterCount() {
-        // Récupérer le contenu du textarea
-        var content = document.getElementById('contenu_temoignage').value;
-        
-        // Récupérer le nombre de caractères
-        var characterCount = content.length;
+        // Fonction pour mettre à jour le nombre de caractères restants
+        function updateCharacterCount() {
+            // Récupérer le contenu du textarea
+            var content = document.getElementById('contenu_temoignage').value;
+            
+            // Récupérer le nombre de caractères
+            var characterCount = content.length;
 
-        // Définir la limite de caractères
-        var maxLength = 6000;
+            // Définir la limite de caractères
+            var maxLength = 6000;
 
-        // Calculer le nombre de caractères restants
-        var remainingCharacters = maxLength - characterCount;
+            // Calculer le nombre de caractères restants
+            var remainingCharacters = maxLength - characterCount;
 
-        // Afficher le nombre de caractères restants
-        document.getElementById('characterCount').innerText = remainingCharacters + ' caractères restants';
-    }
+            // Afficher le nombre de caractères restants
+            document.getElementById('characterCount').innerText = remainingCharacters + ' caractères restants';
+        }
 
-    // Appeler la fonction pour mettre à jour le nombre de caractères lorsqu'une touche est relâchée dans le textarea
-    document.getElementById('contenu_temoignage').addEventListener('input', updateCharacterCount);
+        // Appeler la fonction pour mettre à jour le nombre de caractères lorsqu'une touche est relâchée dans le textarea
+        document.getElementById('contenu_temoignage').addEventListener('input', updateCharacterCount);
 
-    // Appeler la fonction une fois au chargement de la page pour initialiser le compteur
-    updateCharacterCount();
-</script>
+        // Appeler la fonction une fois au chargement de la page pour initialiser le compteur
+        updateCharacterCount();
+    </script>
 
 @stop

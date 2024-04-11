@@ -8,15 +8,22 @@
             <div class="personnal-temoignage-image-container">
                 <img src="{{ asset('BackOffice/public/storage/image_temoignage/' . $temoignage->image_temoignage) }}" class="personnal-temoignage-img"/>
             </div>
-            <h3 class="middle-title" style="text-align: justify;">
-                {{ $temoignage->titre_temoignage }}
-            </h3>
+            <div class="temoigngage-header-text">
+                <p class="text" style="color: var(--gray-color);"> 
+                    {{ $temoignage->prenom_temoignage }},
+                    {{ \Carbon\Carbon::parse($temoignage->date_temoignage)->isoFormat('D MMMM YYYY', 'Do MMMM YYYY') }}
+                </p>
+                <h3 class="middle-title" style="text-align: justify;">
+                    {{ $temoignage->titre_temoignage }}
+                </h3>
+            </div>
         </div>
         <div class="personnal-temoignage-text ">
-            <textarea class="text dg paragraphe-text text" readonly>
+            <i class="ri-double-quotes-r lg"></i>
+            <textarea class="text dg paragraphe-text text" readonly> 
                 {{ $temoignage->contenu_temoignage }} 
             </textarea>
-        </div>      
+        </div>    
     </section>
 
 @stop

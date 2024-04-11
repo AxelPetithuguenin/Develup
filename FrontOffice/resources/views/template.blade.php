@@ -156,13 +156,13 @@
     @show
 
     <!-- // SWIPER JS // -->
-    <script src="{{ asset ('FrontOffice/public/assets/js/swiper-bundle.min.js')}}"></script>
+    <script src="{{ asset('FrontOffice/public/assets/js/swiper-bundle.min.js')}}"></script>
+    <script src="{{ asset('FrontOffice/public/assets/js/slider.js') }}"></script> 
 
     <!-- // SCRIPT // -->
     <script src="{{ asset ('FrontOffice/public/assets/js/navbar.js') }}"></script>
     <script src="./assets/js/scroll-down.js"></script>
     <script src="{{ asset ('FrontOffice/public/assets/js/remonte_scroll.js') }}"></script>
-    <script src="{{ asset ('FrontOffice/public/assets/js/slider.js') }}"></script> <!-- Assurez-vous que ce fichier contient le code JavaScript pour votre slider -->
 
     <!-- // SCROLLREVEAL // -->
     <script src="https://unpkg.com/scrollreveal"></script>

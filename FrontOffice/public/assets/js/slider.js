@@ -69,3 +69,30 @@ let swiperCardsTemoignage = new Swiper(".slider-temoignage-container", {
     },
   },
 });
+
+// SWIPER ADHERENT // 
+let swiperCardsAdherent = new Swiper(".slider-adherent-container", {
+  loop: true,
+  spaceBetween: 50,
+  grabCursor: false,
+
+  pagination: {
+    el: ".swiper-pagination-adherent",
+    clickable: true,
+    dynamicBullets: true,
+  },
+
+  autoplay: { 
+    delay: 3000, 
+    disableOnInteraction: false 
+  },
+
+  breakpoints:{
+    653: {
+      slidesPerView: 3,
+    },
+    450: {
+      slidesPerView: 2,
+    },
+  },
+});

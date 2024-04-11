@@ -1304,7 +1304,7 @@ hr{
 }
 .card-temoignage-page{
     position: relative;
-    width: 300px;
+    width: 280px;
     height: 325px;
     margin: 15px;
     display: flex;
@@ -1315,10 +1315,14 @@ hr{
     border-radius: 15px;
     background-color: var(--white-color);
     overflow: hidden;
+    transition: .3s ease-in;
+}
+.card-temoignage-page:hover{
+    box-shadow: 0 0 30px 5px var(--primary-color);
 }
 .card-image{
-    width: 140px;
-    height: 140px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -1333,7 +1337,7 @@ hr{
 .pagination{
     width: 100%;
     height: auto;
-    margin: 15px 0;
+    margin: 25px 0;
 }
 .pagination-container{
     display: flex;
@@ -1346,7 +1350,7 @@ hr{
     text-align: center;
 }
 .pagination-icon-btn{  
-    padding: 7px 14px; 
+    padding: 7px 10px; 
     color: var(--white-color);
     font-weight: var(--medium-font-weight);
     background-color: var(--primary-color);
@@ -1359,9 +1363,12 @@ hr{
 }
 .pagination-btn:hover{
     cursor: pointer;
-}   
+}  
+.pagination i{
+    color: var(--white-color);
+} 
 .pagination-icon-btn:hover{
-    background-color: var(--dark-green);
+    background-color: var(--primary-orange);
     transition: .25s ease-in;
 }
 .pagination-number-btn:hover{
@@ -1370,11 +1377,33 @@ hr{
     transition: .25s ease-in;
 }
     /* BREAKPOINTS */
+@media screen and (min-width: 1339px){
+    .card-temoignage-page {
+        margin: 20px;
+    }
+}
 @media screen and (max-width: 1120px){
     .card-temoignage-page{
         width: 300px;
         height: 300px;
-        margin: 5px 7px;
+    }
+}
+@media screen and (max-width: 1056px){
+    .card-temoignage-page{
+        width: 250px;
+        height: 275px;
+    }
+}
+@media screen and (max-width: 950px){
+    .card-temoignage-page{
+        width: 200px;
+        height: 235px;
+    }
+}
+@media screen and (max-width: 867px){
+    .card-temoignage-page{
+        width: 200px;
+        height: 235px;
     }
 }
 @media screen and (max-width: 767px){
@@ -1382,20 +1411,16 @@ hr{
         padding: 25px;
     }
     .card-temoignage-page{
-        width: 275px;
-        height: 275px;
-        margin: 5px 7px;
+        width: 190px;
+        height: 225px;
+        margin: 9px 7px;
     }
 }
 @media screen and (max-width: 653px){
-    .card-temoignage-page{
-        width: 250px;
-        height: 250px;
-        margin: 5px 10px;
-    }
     .card-image{
         width: 125px;
         height: 125px;
+        margin: 12px 7px;
     }
 }
 @media screen and (max-width: 450px){
@@ -1406,13 +1431,16 @@ hr{
         margin-bottom: 25px;
     }
     .card-temoignage-page{
-        width: 275px;
-        height: 225px;
-        margin: 5px 10px;
+        width: 170px;
+        height: 215px;
     }
     .card-image{
         width: 100px;
         height: 100px;
+    }
+    .card-text-container{
+        position: relative;
+        top: -15px;
     }
     .pagination{
         margin: 20px 0;
@@ -1422,6 +1450,17 @@ hr{
     }
     .pagination-icon-btn, .pagination-number-btn{  
         padding: 6px 10px; 
+    }
+}
+@media screen and (max-width: 382px){
+    .card-temoignage-page{
+        width: 145px;
+        height: 190px;
+        margin: 9px 4px;
+    }
+    .card-image{
+        width: 80px;
+        height: 80px;
     }
 }
 
@@ -1486,7 +1525,6 @@ textarea {
         height: 115px;
     }
 }
-
 
 /* CEST QUOI lE DON DE MOELLE OSSEUSE */
 .paragraphe-title{
@@ -1887,7 +1925,86 @@ textarea {
 .error-text{
     color: var(--red-color);
 }
-
+.form-adherent{
+    position: relative;
+    width: 400px;
+    padding: 15px;
+    border: .5px solid var(--white-color);
+    border-radius: 15px;
+    background-color: var(--white-color);
+    backdrop-filter: blur(50%);
+    box-shadow: 0 0 30px 5px var(--primary-color);  
+}
+.header-form{
+    position: relative;
+    margin-bottom: 25px;
+    text-align: center;
+}
+.header-form p{
+    margin: 7px 0;
+}
+.form-group{
+    width: 100%;
+    margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+}
+.input-box{
+    width: 100%;
+    height: auto;
+    margin: 5px 0;
+    padding: 7px 4px;
+    letter-spacing: 1.2px;
+    border: none;
+    border-bottom: 2px solid var(--primary-color);
+    background-color: var(--white-color);
+    outline: none;
+}
+.adherent-other-section{
+    width: 100%;
+    margin: 120px 0;
+    text-align: center;
+}
+.slider-adherent{
+    width: 100%;
+    height: auto;
+    margin: 75px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-adherent{
+    width: 33,33%;
+    height: auto;
+}
+.icone-adherent{
+    font-size: 3.5em;
+}
+.dot-adherent{
+    margin: 75px 0;
+}
+@media screen and (max-width: 450px){
+    .form-adherent{
+        position: relative;
+        width: 320px;
+        margin: 50px 0;
+        box-shadow: 0 0 30px 2px var(--primary-color);  
+    }
+    .slider-adherent{
+        margin: 25px 0;
+    }
+    .icone-adherent{
+        font-size: 2.5em;
+    }
+}
+@media screen and (max-width: 375px){
+    .form-adherent{
+        position: relative;
+        width: 300px;
+        margin: 25px 0;
+        box-shadow: 0 0 30px 2px var(--primary-color);  
+    }
+}
 
 /* TEMOIGNAGE PAGE 
 

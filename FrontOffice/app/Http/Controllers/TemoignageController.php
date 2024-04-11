@@ -17,7 +17,7 @@ class TemoignageController extends Controller
     // RETOURNE LA VIEW DE TOUS LES TEMOIGNAGES
     public function index()
     {
-        $temoignages = Temoignage::paginate(10);
+        $temoignages = Temoignage::orderBy('created_at', 'desc')->paginate(12);
         return view('temoignage', compact('temoignages'));
     }
 
