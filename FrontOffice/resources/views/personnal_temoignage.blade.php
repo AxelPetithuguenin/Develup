@@ -18,9 +18,9 @@
                 </h3>
             </div>
         </div>
-        <div class="personnal-temoignage-text ">
+        <div class="personnal-temoignage-text">
             <i class="ri-double-quotes-r lg"></i>
-            <textarea class="text dg paragraphe-text text" readonly> 
+            <textarea class="text dg paragraphe-text text-container-temoignage" readonly> 
                 {{ $temoignage->contenu_temoignage }} 
             </textarea>
         </div>    

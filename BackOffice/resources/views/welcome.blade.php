@@ -1,5 +1,6 @@
 @extends('template')
 
+
 @section('content')
-    <p>Test</p>
-@stop
+    <p>couc</p>
+@stop 

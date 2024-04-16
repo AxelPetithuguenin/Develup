@@ -69,6 +69,50 @@
         </tbody>
     </table>
 
+    <!-- // PAGINATION // -->
+    <div class="pagination">
+        <div class="pagination-container">
+            @if ($temoignages->onFirstPage())
+                <div class="pagination-btn pagination-icon-btn text disabled">
+                    <i class="ri-arrow-left-s-line"></i>
+                </div>
+            @else
+                <a href="{{ $temoignages->previousPageUrl() }}">
+                    <div class="pagination-btn pagination-icon-btn text">
+                        <i class="ri-arrow-left-s-line"></i>
+                    </div>
+                </a>
+            @endif
+            @foreach ($temoignages->getUrlRange(1, $temoignages->lastPage()) as $page => $url)
+                <div class="pagination-btn">
+                    <a href="{{ $url }}" class="pagination-number-btn text dg {{ $temoignages->currentPage() == $page ? 'active' : '' }}">
+                        {{ $page }}
+                    </a>
+                </div>
+            @endforeach
+            @if ($temoignages->hasMorePages())
+                <div class="pagination-btn pagination-icon-btn text">
+                    <a href="{{ $temoignages->nextPageUrl() }}">
+                        <i class="ri-arrow-right-s-line"></i>
+                    </a>
+                </div>
+            @else
+                <a href="{{ $temoignages    ->nextPageUrl() }}">
+                    <div class="pagination-btn pagination-icon-btn text">
+                        <i class="ri-arrow-right-s-line"></i>
+                    </div>
+                </a>
+            @endif
+        </div>
+    </div>
+
+    <style>
+        .disabled{
+            background-color: var(--primary-color);
+            color: var(--white-color) !important;
+        }
+    </style>
+
     <!-- // MODALE DE CONFIRMATION DE SUPPRESSIONS // -->
     <div class="modal" id="confirmDeleteModal" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
         <div class="modal-dialog">

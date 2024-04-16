@@ -10,7 +10,7 @@ class TemoignageController extends Controller
     // RETOURNE TOUTES LES INFORMATIONS DES TEMOIGNAGES POUR LA PAGE D'ACCUEIL
     public function index_accueil()
     {
-        $temoignages = Temoignage::take(5)->get();
+        $temoignages = Temoignage::take(7)->get();
         return view('accueil', compact('temoignages'));
     }
 

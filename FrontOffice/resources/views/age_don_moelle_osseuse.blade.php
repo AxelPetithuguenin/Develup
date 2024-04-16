@@ -28,55 +28,111 @@
             </div>
 
             <!-- // TABLE // -->
-            <table class="table">
-                <thead class="thead">
-                    <tr class="text">
-                        <td>Limites d’âges</td>
-                        <td>Site Web</td>
-                        <td>Nbre Inscrit</td>
-                        <td>Date de création</td>
-                        <td>Date de création</td>
-                        <td>Entité légale</td>
-                    </tr>
-                </thead>
-                <tbody class="tbody text">
-                    <tr>
-                        <th>National Marrow Donor Program/ Be The Match (Etat-Unis)</th>
-                        <td>18-44 ans</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th>Gift of Life (Etat-Unis)</th>
-                    </tr>
-                    <tr>
-                        <th>DKMS US (Etat-Unis)</th>
-                    </tr>
-                    <tr>
-                        <th>Registre de donneurs de moelle osseuse de la Fondation Josep Carreras [REDMO] (Espagne)</th>  
-                    </tr>
-                    <tr>
-                        <th>Registre de donneur de moelle osseuse (Italie)</th>
-                    </tr>
-                    <tr>
-                        <th>DKMS (Allemagne)</th>
-                    </tr>
-                    <tr>
-                        <th>Anthony Nolan (Royaume Uni)</th>
-                    </tr>
-                    <tr>
-                        <th>British Bone Marrow Registry [BBMR] (Royaume Uni)</th>
-                    </tr>
-                    <tr>
-                        <th>Welsh Bone Marrow Donor Registry</th>
-                    </tr>
-                    <tr>
-                        <th>DKMS UK (Royaume Uni)</th>
-                    </tr>
-                    <tr>
-                        <th>DKMS Polska(Pologne)</th>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-container">
+
+                <table class="table-info">
+                    <thead class="thead">
+                        <tr class="text">
+                            <td></td>
+                            <td>Limites d’âges</td>
+                            <td>Site Web</td>
+                            <td>Nbre Inscrit</td>
+                            <td>Date de création</td>
+                            <td>Entité légale</td>
+                        </tr>
+                    </thead>
+                    <tbody class="tbody text">
+                        <tr class="tr-ligne">
+                            <th>National Marrow Donor Program/ Be The Match (Etat-Unis)</th>
+                            <td>18-44 ans</td>
+                            <td><a href="https://www.bethematch.org/" class="table-link">www.bethematch.org</a></td>
+                            <td>9 112 718</td>
+                            <td>1986</td>
+                            <td>Association à but non lucratif</td>
+                        </tr>
+                        <tr class="tr-ligne">
+                            <th>Gift of Life (Etat-Unis)</th>
+                            <td>18-60 ans</td>
+                            <td><a href="https://www.giftoflife.org/" class="table-link">www.giftoflife.org</a></td>
+                            <td>363 383</td>
+                            <td>1991</td>
+                            <td>Association à but non lucratif</td>
+                        </tr>
+                        <tr class="tr-ligne">
+                            <th>DKMS US (Etat-Unis)</th>
+                            <td>18-55 ans</td>
+                            <td><a href="https://www.dkms.org/" class="table-link">www.dkms.org</a></td>
+                            <td>1 145 299</td>
+                            <td>2004</td>
+                            <td>Association à but non lucratif</td>
+                        </tr>
+                        <tr class="tr-ligne">
+                            <th>Registre de donneurs de moelle osseuse de la Fondation Josep Carreras [REDMO] (Espagne)</th>  
+                            <td>18-55 ans</td>
+                            <td><a href="https://fcarreras.org/" class="table-link">www.fcarreras.org</a></td>
+                            <td>431 703</td>
+                            <td>1191</td>
+                            <td>Fondation/ Association à but non lucratif</td>
+                        </tr>
+                        <tr class="tr-ligne">
+                            <th>Registre de donneur de moelle osseuse (Italie)</th>
+                            <td>18-35 ans</td>
+                            <td><a href="https://ibmdr.galliera.it/" class="table-link">www.ibmdr.galliera.it</a></td>
+                            <td>460 902</td>
+                            <td>1989</td>
+                            <td>Créer par les hopitaux</td>
+                        </tr>
+                        <tr class="tr-ligne">
+                            <th>DKMS (Allemagne)</th>
+                            <td>11-55 ans</td>
+                            <td><a href="https://dkms.de/" class="table-link">www.dkms.de</a></td>
+                            <td>9 322 899</td>
+                            <td>1991</td>
+                            <td>Association à but non lucratif</td>
+                        </tr>
+                        <tr class="tr-ligne">
+                            <th>Anthony Nolan (Royaume Uni)</th>
+                            <td>16-30 ans</td>
+                            <td><a href="https://www.anthonynolan.org/" class="table-link">www.anthonynolan.org</a></td>
+                            <td>831 291</td>
+                            <td>1974</td>
+                            <td>Association à but non lucratif</td>
+                        </tr>
+                        <tr class="tr-ligne">
+                            <th>British Bone Marrow Registry [BBMR] (Royaume Uni)</th>
+                            <td>17-40 ans</td>
+                            <td><a href="https://www.bbmr.co.uk/" class="table-link">www.bbmr.co.uk</a></td>
+                            <td>375 651</td>
+                            <td>1987</td>
+                            <td>Agence publique faisant partie du NHS Blood & Transplant</td>
+                        </tr>
+                        <tr class="tr-ligne">
+                            <th>Welsh Bone Marrow Donor Registry</th>
+                            <td>17-40 ans</td>
+                            <td><a href="https://www.welsh-blood.org.uk/donating-bone-marrow/" class="table-link">www.dkms.org</a></td>
+                            <td>72 133</td>
+                            <td>1990</td>
+                            <td>Agence publique faisant partie du Wesh Blood Servicen lui-même appartenant au Velindre University NHS Trust</td>
+                        </tr>
+                        <tr class="tr-ligne">
+                            <th>DKMS UK (Royaume Uni)</th>
+                            <td>11-55 ans</td>
+                            <td><a href="https://dkms.org.uk/" class="table-link">www.dkms.org.uk</a></td>
+                            <td>783 348</td>
+                            <td>2013</td>
+                            <td>Association à but non lucratif</td>
+                        </tr>
+                        <tr class="tr-ligne">
+                            <th>DKMS Polska(Pologne)</th>
+                            <td>18-55 ans</td>
+                            <td><a href="https://dkms.pl/" class="table-link">www.dkms.pl</a></td>
+                            <td>1 660 808</td>
+                            <td>2009</td>
+                            <td>Association à but non lucratif</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
             <!-- // CONTAINER // -->
             <div class="header-page-container">
@@ -146,5 +202,4 @@
             </div>
             
     </section>
-
 @stop

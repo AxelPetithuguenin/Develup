@@ -52,7 +52,7 @@
             <!-- // LABEL CONTENU // -->
             <div class="form-group">
                 <label for="contenu_temoignage" class="text label-dashboard">Contenu du témoignage</label>
-                <textarea class="input-box text text-area-dashboard" name="contenu_temoignage" id="contenu_temoignage" maxlength="6000"></textarea>
+                <textarea class="input-box text text-area-dashboard" name="contenu_temoignage" id="contenu_temoignage" maxlength="5000"></textarea>
                 <div id="characterCount" class="text">6000 caractères restants</div>
                 @error('contenu_temoignage')
                     <div class="error-text">{{ $message }}</div>
@@ -87,7 +87,7 @@
             var characterCount = content.length;
 
             // Définir la limite de caractères
-            var maxLength = 6000;
+            var maxLength = 5000;
 
             // Calculer le nombre de caractères restants
             var remainingCharacters = maxLength - characterCount;

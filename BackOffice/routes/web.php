@@ -6,6 +6,7 @@ use App\Http\Controllers\TemoignageController;
 use App\Http\Controllers\PartenairesController;
 use App\Http\Controllers\LiensController;
 use App\Http\Controllers\AdherentController;
+use App\Http\Controllers\ActualiteController;
 use App\Models\Adherent;
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +36,8 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-
+/*===== ACTUALITE =====*/
+Route::resource('/actualites', ActualiteController::class);
 /*===== PARTENAIRES =====*/
 Route::resource('dashboard/partenaires', PartenairesController::class)->middleware('auth');
 /*===== LIENS =====*/

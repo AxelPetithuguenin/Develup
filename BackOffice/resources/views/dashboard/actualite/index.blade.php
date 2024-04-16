@@ -2,98 +2,94 @@
 
 @section('content')
 
-    <!-- // LIEN CREATION D'UN PARTENAIRE // -->
-    <form action="{{ route('partenaires.create')}}" method="get">
+
+
+    <!-- // LIEN CREATION D'UNE ACTUALITE // -->
+    <form action="{{ route('actualites.create')}}" method="get">
         @csrf
-        <button type="submit" class="header-button-dashboard btn green-btn text">Créer un partenaire</button>
+        <button type="submit" class="header-button-dashboard btn green-btn text">Ajouter une nouvelle actualité</button>
     </form>
 
     <!-- // SEARCH BAR // -->
     <div class="search-bar">
-        <div class="search-bar-content">
-            <input class="text input-search-box" type="text" id="searchInput" onkeyup="searchTable()" placeholder="Rechercher" title="Rechercher">
-            <i class="ri-search-line search-icone text"></i>
+            <div class="search-bar-content">
+                <input class="text input-search-box" type="text" id="searchInput" onkeyup="searchTable()" placeholder="Rechercher" title="Rechercher">
+                <i class="ri-search-line search-icone text"></i>
+            </div>
         </div>
     </div>
 
-    <!-- // LISTE DES PARTENAIRES // -->
+    <!-- // ACTUALITE // -->
     <table class="dashboard-table" id="dashbaord-table"> 
         <thead class="dashboard-thread text">
             <tr>
                 <th>
-                    <button class="btn btn-link text" data-sort="name">Nom du partenaire <i class="ri-expand-up-down-fill"></i></button>
+                    <button class="btn btn-link" data-sort="titre">Titre<i class="ri-expand-up-down-fill"></i></button>
                 </th>
-                <th>Logo</th>
-                <th>Réseau Sociaux</th>
+                <th>Date</th>
+                <th>Image</th>
+                <th>Contenu</th>
                 <th>Modifier</th>
                 <th>Supprimer</th>
             </tr>
         </thead>
         <tbody class="dashboard-tbody text">
-            
-            @foreach($partenaires as $partenaire)
-                <tr>
-                    <td>
-                        {{ $partenaire->nom_partenaire }}
-                    </td>
-                    <td>
-                        <img class="dashboard-image" src="{{ asset('BackOffice/public/storage/logos/' . $partenaire->logo_partenaire) }}" alt="{{ $partenaire->nom_partenaire }}">
-                    </td>
-                    <td>
-                        @foreach($partenaire->liens as $lien)
-                            <a href="{{ $lien->pivot->lien }}" target="_blank">
-                                <img src="{{ asset('BackOffice/public/storage/icone/' . $lien->icone) }}" alt="{{ $lien->nom }}" title="{{ $lien->nom }}" width="20" height="20">
-                            </a>
-                        @endforeach
-                    </td>
-                    <td>
-                        <form action="{{ route('partenaires.edit', [$partenaire->id]) }}" method="get">
-                            @csrf
-                            <button type="submit" class="edit-btn text">Modifier<i class="ri-pencil-fill"></i></button>
-                        </form>
-                    </td>
-                    <td>
-                        <form action="{{ route('partenaires.destroy', [$partenaire->id]) }}" method="POST" id="deleteForm{{$partenaire->id}}">
-                            @csrf
-                            @method('DELETE')
-                            <button type="button" class="delete-btn text" onclick="confirmDelete('{{ $partenaire->id }}', '{{ $partenaire->nom_partenaire }}')">Supprimer <i class="ri-delete-bin-line"></i></button>
-                        </form>
-                    </td>
-                </tr>
-            @endforeach
-
+        
+        @foreach($actualites as $actualite)
+            <tr>
+                <td>{{ implode(' ', array_slice(explode(' ', $actualite->contenu_actualite), 0, 5)) }}{{ str_word_count($actualite->titre_actualite) > 5 ? '...' : '' }}</td>
+                <td>{{ $actualite['_date_actualite']}}</td>
+                <td>
+                    <img src="storage/{{ $actualite['image'] }}" alt="{{ $actualite['image'] }}" class="dashboard-image"/>         
+                </td>
+                <td>{{ implode(' ', array_slice(explode(' ', $actualite->contenu_actualite), 0, 5)) }}{{ str_word_count($actualite->contenu_actualite) > 5 ? '...' : '' }}</td>
+                <td>
+                    <form action="{{ route('actualites.edit', [$actualite['id']])}}" method="get">
+                        @csrf
+                        <button type="submit" class="edit-btn text">Modifier<i class="ri-pencil-fill"></i></button>
+                    </form>
+                </td>
+                <td>
+                    <form action="{{ route('actualites.destroy', [$actualite->id]) }}" method="POST" id="deleteForm{{$actualite->id}}">
+                        @csrf
+                        @method('DELETE')
+                        <button type="button" class="delete-btn text" onclick="confirmDelete('{{ $actualite->id }}', '{{ $actualite->titre_actualite }}')">Supprimer <i class="ri-delete-bin-line"></i></button>
+                    </form>
+                </td>
+            </tr>
+        @endforeach
         </tbody>
     </table>
-
-    <!-- // PAGINATION // -->
-    <div class="pagination">
+    
+        <!-- // PAGINATION // -->
+        <div class="pagination">
         <div class="pagination-container">
-            @if ($partenaires->onFirstPage())
+            @if ($actualites->onFirstPage())
                 <div class="pagination-btn pagination-icon-btn text disabled">
                     <i class="ri-arrow-left-s-line"></i>
                 </div>
             @else
-                <a href="{{ $partenaires->previousPageUrl() }}">
+                <a href="{{ $actualites->previousPageUrl() }}">
                     <div class="pagination-btn pagination-icon-btn text">
                         <i class="ri-arrow-left-s-line"></i>
                     </div>
                 </a>
             @endif
-            @foreach ($partenaires->getUrlRange(1, $partenaires->lastPage()) as $page => $url)
+            @foreach ($actualites->getUrlRange(1, $actualites->lastPage()) as $page => $url)
                 <div class="pagination-btn">
-                    <a href="{{ $url }}" class="pagination-number-btn text dg {{ $partenaires->currentPage() == $page ? 'active' : '' }}">
+                    <a href="{{ $url }}" class="pagination-number-btn text dg {{ $actualites->currentPage() == $page ? 'active' : '' }}">
                         {{ $page }}
                     </a>
                 </div>
             @endforeach
-            @if ($partenaires->hasMorePages())
+            @if ($actualites->hasMorePages())
                 <div class="pagination-btn pagination-icon-btn text">
-                    <a href="{{ $partenaires->nextPageUrl() }}">
+                    <a href="{{ $actualites->nextPageUrl() }}">
                         <i class="ri-arrow-right-s-line"></i>
                     </a>
                 </div>
             @else
-                <a href="{{ $partenaires->nextPageUrl() }}">
+                <a href="{{ $actualites->nextPageUrl() }}">
                     <div class="pagination-btn pagination-icon-btn text">
                         <i class="ri-arrow-right-s-line"></i>
                     </div>
@@ -108,6 +104,7 @@
             color: var(--white-color) !important;
         }
     </style>
+    
 
     <!-- // MODALE DE CONFIRMATION DE SUPPRESSIONS // -->
     <div class="modal" id="confirmDeleteModal" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
@@ -184,9 +181,9 @@
 
     <!-- // SCRIPT // -->
     <script>
-        function confirmDelete(id, nom_partenaire) {
+        function confirmDelete(id, titre_actualite) {
             $('#confirmDeleteModal').modal('show');
-            $('#modalBodyText').text(`Êtes-vous sûr de vouloir supprimer ${nom_partenaire} ?`);
+            $('#modalBodyText').text(`Êtes-vous sûr de vouloir supprimer ${titre_actualite} ?`);
 
             // Si l'utilisateur clique sur "Supprimer", soumettez le formulaire de suppression
             $('#confirmDeleteButton').click(function() {

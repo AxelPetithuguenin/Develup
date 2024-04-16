@@ -18,6 +18,12 @@ class SimplyRouteController extends Controller
             return view('age_don_moelle_osseuse'); 
         }
 
+    /*===== NOS ACTIONS =====*/
+        /*===== NOUS CONTACTER PAGE =====*/ 
+        function actions(){
+            return view('actions'); 
+        }
+
     /*===== ASSOCIATION =====*/
         /*===== PRESENTATION PAGE =====*/ 
         function presentation(){
@@ -26,20 +32,12 @@ class SimplyRouteController extends Controller
 
         /*===== RESULTATS PAGE =====*/ 
         function resultats(){
-            return view('don_moelle_osseuse'); // A FAIRE LA VIEW
+            return view('don_moelle_osseuse'); 
         }
-
-
 
     /*===== NOUS CONTACTER =====*/
         /*===== NOUS CONTACTER PAGE =====*/ 
         function contact(){
-            return view('adherer'); // A FAIRE LA VIEW
-        }
-
-    /*===== DEVENIR DONNEUR =====*/
-        /*===== DEVENIR DONNEUR =====*/ 
-        function devenir_donneur(){
-            return view('adherer');  // A FAIRE LA VIEW
+            return view('contact'); 
         }
 }

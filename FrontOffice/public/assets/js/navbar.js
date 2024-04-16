@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const menuHamburger = document.querySelector('.menu-hamburger');
     const blurContent = document.querySelector('.blur-content'); 
     const barMenus = document.querySelectorAll('.bar-menu');
+    const resText = document.querySelector('.res-text'); 
 
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
@@ -12,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 toggleBlur(); 
                 toggleWhite(); 
                 toggleMenuIcon();
+                toggleResTextVisibility(); 
             }
         });
     });
@@ -21,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
         toggleBlur(); 
         toggleWhite(); 
         toggleMenuIcon();
+        toggleResTextVisibility();
     });
 
     // Ajouter l'effet blur ou non 
@@ -52,5 +55,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 barMenu.style.transform = 'rotate(0)';
             }
         });
+    }
+
+    // Fonction pour masquer ou afficher le texte "Devenir donneur"
+    function toggleResTextVisibility() {
+        if (navLinksContainer.classList.contains('active')) {
+            resText.style.display = 'none'; 
+        } else {
+            resText.style.display = 'block'; 
+        }
     }
 });

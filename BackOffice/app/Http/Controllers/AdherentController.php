@@ -14,7 +14,7 @@ class AdherentController extends Controller
     {
         try{
             // RETOURNE TOUT LES LIENS // 
-            $adherents = Adherent::all();
+            $adherents = Adherent::Paginate(20);
             return view('dashboard.adherents.adherent', compact('adherents'));
         } 
         catch (\Exception $e) {

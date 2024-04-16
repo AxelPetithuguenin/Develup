@@ -27,6 +27,7 @@ use App\Http\Controllers\AdherentController;
     Route::get('/temoignage/{id}', [TemoignageController::class, 'show'])->name('personnal_temoignage');
 
 /*===== ACTIONS =====*/
+    Route::get('/nos-actions', [SimplyRouteController::class,'actions'])->name('actions-show'); 
 
 /*===== DON MOELLE OSSEUSE =====*/
     /*===== DON MOELLE OSSEUSE PAGE =====*/ 
@@ -48,7 +49,3 @@ use App\Http\Controllers\AdherentController;
 /*===== NOUS CONTACTER =====*/
     /*===== NOUS CONTACTER PAGE =====*/ 
     Route::get('/nous-contacter', [SimplyRouteController::class,'contact'])->name('contact-show'); 
-
-/*===== DEVENIR DONNEUR =====*/
-    /*===== DEVENIR DONNEUR =====*/ 
-    Route::get('/devenir-donneur', [SimplyRouteController::class,'devenir_donneur'])->name('devenir-donneur-show'); 

@@ -11,6 +11,7 @@
     --dark-green: hsl(144, 42%, 9%);
     --light-gray-color: hsl(0, 9%, 85%); 
     --gray-color: hsl(18, 4%, 48%);
+    --blue-color : hsl(211, 100%, 50%); 
     --red-color : hsl(0, 100%, 52%);
     --purple-color : hsl(263, 50%, 55%); 
     --middel-green-color: hsl(144, 24%, 96%);
@@ -142,7 +143,58 @@ header{
 }
 
 
-
+/* LOGIN */
+.login-dashboard{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+}
+.form-login,
+.ibw{
+    background-color: var(--white-color) !important;
+}
+.form-login{
+    position: relative;
+    width: auto;
+    padding: 15px;
+    border: .5px solid var(--white-color);
+    border-radius: 15px;
+    background-color: var(--white-color);
+    backdrop-filter: blur(50%);
+    box-shadow: 0 0 30px 5px var(--primary-color);  
+}
+.bottom-login{
+    display: flex;
+    flex-direction: column;
+}
+.check-box-container{
+    margin: 15px 0;
+}
+.fyp{
+    color: var(--blue-color);
+}
+    /* BREAKPOINTS */
+@media screen and (max-width: 540px){
+    .form-login{
+        position: relative;
+        width: 320px;
+    }
+    .input-box{
+        width: 290px !important;
+    }
+}
+@media screen and (max-width: 375px){
+    .form-login{
+        position: relative;
+        width: 300px;
+    }
+    .input-box{
+        width: 270px !important;
+    }
+}
 
 
 /* DASHBOARD */
@@ -491,6 +543,53 @@ svg{
     justify-content: end;
     color: var(--gray-color);
 }
+
+/* PAGINATION */
+.pagination{
+    width: 100%;
+    height: auto;
+    margin: 25px 0;
+}
+.pagination-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pagination-btn{
+    margin: 15px;
+    border-radius: 7px;
+    text-align: center;
+}
+.pagination-icon-btn{  
+    padding: 7px 10px; 
+    color: var(--white-color);
+    font-weight: var(--medium-font-weight);
+    background-color: var(--primary-color);
+}
+.pagination-number-btn{
+    padding: 7px 14px;
+    border-radius: 7px;
+    font-weight: var(--medium-font-weight);
+    background-color: var(--light-gray-color);
+}
+.pagination-btn:hover{
+    cursor: pointer;
+}  
+.pagination i{
+    color: var(--white-color);
+} 
+.pagination-icon-btn:hover{
+    background-color: var(--primary-orange);
+    transition: .25s ease-in;
+}
+.pagination-number-btn:hover{
+    color: var(--white-color);
+    background-color: var(--gray-color);
+    transition: .25s ease-in;
+}
+
+
+
     /* BREAKPOINTS */
 @media screen and (max-width: 1120px) {
     .sidebar-link-container ul li{

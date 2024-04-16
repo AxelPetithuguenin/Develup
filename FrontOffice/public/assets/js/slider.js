@@ -1,31 +1,37 @@
-// SWIPER JS // 
-let swiperCards = new Swiper(".slider-prochaines-actions-container", {
+// SWIPER PROCHAINES ACTIONS //  
+let swiperCardsProchainesActions = new Swiper(".card-content-prochaines-actions", {
   loop: true,
-  spaceBetween: 15,
+  spaceBetween: 32,
   grabCursor: true,
 
   pagination: {
-    el: ".swiper-pagination-prochaine-action",
+    el: ".swiper-pagination-prochaines-actions",
     clickable: true,
     dynamicBullets: true,
   },
 
   navigation: {
-    nextEl: ".swiper-button-next-prochaine-action",
-    prevEl: ".swiper-button-prev-prochaine-action",
+    nextEl: ".swiper-button-next-prochaines-actions",
+    prevEl: ".swiper-button-prev-prochaines-actions",
+  },
+
+  autoplay: { 
+    delay: 3000, 
+    disableOnInteraction: false 
   },
 
   breakpoints:{
     1120: {
       slidesPerView: 1,
     },
-  },
+  }
 });
 
-// SWIPER ACTUALITE // 
-let swiperCardsActualite = new Swiper(".slider-actualite-container", {
+
+// SWIPER PROCHAINES ACTIONS //  
+let swiperCardsActualite = new Swiper(".card-content-actualite", {
   loop: true,
-  spaceBetween: 15,
+  spaceBetween: 32,
   grabCursor: true,
 
   pagination: {
@@ -39,6 +45,11 @@ let swiperCardsActualite = new Swiper(".slider-actualite-container", {
     prevEl: ".swiper-button-prev-actualite",
   },
 
+  autoplay: { 
+    delay: 3000, 
+    disableOnInteraction: false 
+  },
+
   breakpoints:{
     1120: {
       slidesPerView: 1,
@@ -46,10 +57,11 @@ let swiperCardsActualite = new Swiper(".slider-actualite-container", {
   },
 });
 
-// SWIPER TEMOIGNAGE // 
-let swiperCardsTemoignage = new Swiper(".slider-temoignage-container", {
+
+// SWIPER TEMOIGANGE //  
+let swiperCardsTemoignage = new Swiper(".card-content-temoignage", {
   loop: true,
-  spaceBetween: 15,
+  spaceBetween: 32,
   grabCursor: true,
 
   pagination: {
@@ -63,17 +75,26 @@ let swiperCardsTemoignage = new Swiper(".slider-temoignage-container", {
     prevEl: ".swiper-button-prev-temoignage",
   },
 
+  autoplay: { 
+    delay: 3000, 
+    disableOnInteraction: false 
+  },
+
   breakpoints:{
-    600: {
+    968: {
+      slidesPerView: 3,
+    },
+    653: {
       slidesPerView: 2,
     },
   },
 });
 
-// SWIPER ADHERENT // 
-let swiperCardsAdherent = new Swiper(".slider-adherent-container", {
+
+// SWIPER ADHERENT //  
+let swiperCardsAdherent = new Swiper(".card-content", {
   loop: true,
-  spaceBetween: 50,
+  spaceBetween: 10,
   grabCursor: false,
 
   pagination: {
@@ -88,11 +109,13 @@ let swiperCardsAdherent = new Swiper(".slider-adherent-container", {
   },
 
   breakpoints:{
-    653: {
+    1049: {
       slidesPerView: 3,
     },
-    450: {
+    560: {
       slidesPerView: 2,
     },
-  },
+  }
 });
+
+

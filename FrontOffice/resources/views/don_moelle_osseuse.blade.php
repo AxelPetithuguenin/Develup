@@ -5,7 +5,7 @@
 
     <!-- // C EST QUOI LE DON DE MOELLE OSSEUSE CONTAINER -->
     <section class="container-page">
-        
+        <!-- // TEXT // -->
         <div class="paragraphe-text">
             <div class="header-page-container">
                 <div class="header-title-container">
@@ -25,8 +25,9 @@
                 </div>
             </div>
         </div>
+        
+        <!-- // TEXT // -->
         <div class="personnal-temoignage-text">
-
             <div class="paragraphe-text">
                 <div class="paragraphe-title">
                     <p class="paragraphe-title-orange text">
@@ -66,10 +67,12 @@
                 </p>
             </div>
 
+            <!-- // VIDEO // -->
             <div class="video-container">
                 <iframe src="https://www.youtube.com/watch?v=gfuLic2jyRA" alt="video-explication-don-de-moelle-osseuse" class="simple-video"></iframe>
             </div>
 
+            <!-- // TEXT // -->
             <div class="paragraphe-text">
                 <p class="text">
                     La compatibilité nécessaire pour une greffe de moelle osseuse fait appel à un système complexe, le HLA, différent de celui des groupes sanguins. 
@@ -90,7 +93,7 @@
             <div class="wrap">
                 <article class="simple-card">
                     <div class="simple-card-image-container">
-                        <!--<img src="assets/img/don-de-moelle-osseuse-1.png" alt="le déroulement du don de la moelle osseuse" class="simple-card-image"/>-->
+                        <img src="./assets/img/logo/don-de-moelle-osseuse-2.png" alt="le déroulement du don de la moelle osseuse" class="simple-card-image"/>
                     </div>
                     <div class="simple-card-text-container">
                         <p class="card-text-title text">

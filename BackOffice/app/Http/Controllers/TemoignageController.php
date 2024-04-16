@@ -15,7 +15,7 @@ class TemoignageController extends Controller
     {
         try{
             // RETOURNE TOUT LES TEMOIGNAGE // 
-            $temoignages = Temoignage::all();
+            $temoignages = Temoignage::paginate(10);
             return view('dashboard.temoignage.temoignages', compact('temoignages'));
         } 
         catch (\Exception $e) {

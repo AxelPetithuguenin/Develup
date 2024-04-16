@@ -16,7 +16,7 @@ class LiensController extends Controller
     {
         try{
             // RETOURNE TOUT LES LIENS // 
-            $liens = Liens::all();
+            $liens = Liens::Paginate(20);
             return view('dashboard.liens.lien', compact('liens'));
         } 
         catch (\Exception $e) {

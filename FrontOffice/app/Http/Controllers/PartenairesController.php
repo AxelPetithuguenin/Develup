@@ -10,7 +10,7 @@ class PartenairesController extends Controller
     // RETOURNE TOUTES LES INFORMATIONS DES PARTENAIRES
     public function index()
     {
-        $partenaires =  Partenaire::all();
+        $partenaires =  Partenaire::orderBy('created_at', 'desc')->paginate(20);
         return view('/partenaires', compact('partenaires'));
     }
 }

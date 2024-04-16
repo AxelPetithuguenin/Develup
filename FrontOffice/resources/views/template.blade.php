@@ -25,83 +25,92 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <div class="background-logo">
-                    <a href="{{route('accueil-show')}}" class="logo-img">
-                        <img src="{{ asset ('FrontOffice/public/assets/img/logo/logo.png') }}" alt="logo-Engagement-Leucemie" class="logo-el"/>            
-                    </a>
-                </div>
+                <a href="{{route('accueil-show')}}" class="logo-img">
+                    <img src="{{ asset ('FrontOffice/public/assets/img/logo/logo.png') }}" alt="logo-Engagement-Leucemie" class="logo-el"/>            
+                </a>
             </div>
-            <div class="nav-container">
-                <div class="nav-links">
-                    <ul>
-                        <li><a href="{{route('accueil-show')}}" class="link">Accueil</a></li>
-                        <li><a href="{{route('temoignage-show')}}" class="link">Témoignages</a></li>
-                        <li>
-                            <div class="dropdown-menu">
-                                <p class="link">Actions<i class="ri-arrow-down-s-line"></i></p>
-                                <div class="dropdown-menu-container">
-                                    <ul>
-                                        <li>
-                                            <a href="action.html" class="text">Nouvelles actions</a>
-                                        </li>
-                                        <li>
-                                            <a href="action.html" class="text">Anciennes actions</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>   
-                        </li>
-                        <li>
-                            <div class="dropdown-menu">
-                                <p class="link">Don de Moelle Osseuse<i class="ri-arrow-down-s-line"></i></p>
-                                <div class="dropdown-menu-container">
-                                    <ul>
-                                        <li>
-                                            <a href="{{route('don-moelle-osseuse-show')}}" class="text">C'est quoi ?</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{route('age-moelle-osseuse-show')}}" class="text">Pourquoi 18-35 ans ?</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>   
-                        </li>
-                        <li>
-                            <div class="dropdown-menu">
-                                <p class="link">Association<i class="ri-arrow-down-s-line"></i></p>
-                                <div class="dropdown-menu-container">
-                                    <ul>
-                                        <li>
-                                            <a href="{{route('presentation-show')}}" class="text">Présentation</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{route('partenaires-show')}}" class="text">Partenaires</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="text">Résultat</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{route('adherer-show')}}" class="text">Adhérer</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>   
-                        </li>
-                        <li><a href="#" class="link">Nous contacter</a></li>
-                    </ul>
-                </div>
-                <div class="nav-donneur">
-                    <a href="https://www.dondemoelleosseuse.fr/" class="btn nav-btn text">Devenir donneur</a>
-                </div>
+            <div class="nav-links">
+                <ul>
+                    <li>
+                        <a href="{{route('accueil-show')}}" class="lg nav-text">
+                            Accueil
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{route('temoignage-show')}}" class="lg nav-text">
+                            Témoignages
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <p class="lg nav-text">
+                            Actions
+                            <i class="ri-arrow-down-s-line lg"></i>
+                        </p>
+                        <div class="dropdown-content">
+                            <a href="{{route('actions-show')}}" class="text">
+                                Action à venir
+                            </a>
+                            <a href="#" class="text">
+                                Anciennes Actions
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="https://www.dondemoelleosseuse.fr/" class="lg nav-text border-bottom">
+                            Devenir donneur
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <p class="lg nav-text">
+                            Don moelle osseuse
+                            <i class="ri-arrow-down-s-line lg"></i>
+                        </p>
+                        <div class="dropdown-content">
+                            <a href="{{route('don-moelle-osseuse-show')}}" class="text">
+                                C'est quoi ?
+                            </a>
+                            <a href="{{route('age-moelle-osseuse-show')}}" class="text">
+                                Pourquoi 18-35 ans ?
+                            </a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <p class="lg nav-text">Association
+                            <i class="ri-arrow-down-s-line lg"></i>
+                        </p>
+                        <div class="dropdown-content">
+                            <a href="{{route('presentation-show')}}" class="text">
+                                Présentation
+                            </a>
+                            <a href="{{route('partenaires-show')}}" class="text">
+                                Partenaires
+                            </a>
+                            <a href="#" class="text">
+                                Résultat
+                            </a>
+                            <a href="{{route('adherer-show')}}" class="text">
+                                Adhérer
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="{{route('contact-show')}}" class="lg nav-text">
+                            Nous contacter
+                        </a>
+                    </li>
+                </ul>
             </div>
+            <a href="https://www.dondemoelleosseuse.fr/" class="lg nav-text border-bottom res-text">
+                            Devenir donneur
+            </a>
             <div class="menu-hamburger">
                 <span class="bar-menu"></span>
                 <span class="bar-menu"></span>
                 <span class="bar-menu"></span>
             </div>
-        </nav>
+        </nav>        
     </header>
-
+    
     <div class="blur-content"></div>
 
     <!-- // CONTAINER PAGE // -->
@@ -152,6 +161,7 @@
                     </ul>
                 </div>
             </div>
+            <p style="font-size: .8em; color: var(--white-color); text-align:center; ">Designed by<a href="https://ethandelbos.com/" style="color: var(--white-color); font-weight:600;">EthanDelbos</a></p>
         </footer>
     @show
 

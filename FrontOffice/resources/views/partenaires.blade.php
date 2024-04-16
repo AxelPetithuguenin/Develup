@@ -20,6 +20,10 @@
                 </p>
             </div>
         </div>
+        <p class="text" style="position:relative; margin-top:25px; text-align:center;">
+            <i class="ri-refresh-line lg"></i>
+            Découvrez les sites de nos partenaires en un clin d'œil ! Survolez nos cartes pour voir leurs sites grâce à notre animation flip.
+        </p>
     </div>
     <div class="partenaire-container">
         <div class="wrap">
@@ -29,7 +33,7 @@
 
                         <!-- // FRONT // -->
                         <div class="card-front">
-                            <img class="dashboard-image" src="{{ asset('BackOffice/public/storage/logos/' . $partenaire->logo_partenaire) }}" alt="{{ $partenaire->nom_partenaire }}">
+                            <img class="card-image-logo" src="{{ asset('BackOffice/public/storage/logos/' . $partenaire->logo_partenaire) }}" alt="{{ $partenaire->nom_partenaire }}">
                             <p class="text" style="text-align: center;">
                                 {{ $partenaire->nom_partenaire }}
                             </p>
@@ -49,7 +53,7 @@
                                     <div class="wrap">
                                         @foreach($partenaire->liens as $lien)
                                             <a href="{{ $lien->pivot->lien }}" target="_blank" class="icone-partenaire">
-                                                <img src="{{ asset('BackOffice/public/storage/icone/' . $lien->icone) }}" alt="{{ $lien->nom }}">
+                                                <img src="{{ asset('BackOffice/public/storage/icone/' . $lien->icone) }}" alt="{{ $lien->nom }}" class="icone-card-partenaire">
                                             </a>
                                         @endforeach
                                     </div>
@@ -61,6 +65,50 @@
             @endforeach
         </div>
     </div>
-</section>
+
+    <!-- // PAGINATION // -->
+     <div class="pagination">
+        <div class="pagination-container">
+            @if ($partenaires->onFirstPage())
+                <div class="pagination-btn pagination-icon-btn text disabled">
+                    <i class="ri-arrow-left-s-line"></i>
+                </div>
+            @else
+                <a href="{{ $partenaires->previousPageUrl() }}">
+                    <div class="pagination-btn pagination-icon-btn text">
+                        <i class="ri-arrow-left-s-line"></i>
+                    </div>
+                </a>
+            @endif
+
+            @foreach ($partenaires->getUrlRange(1, $partenaires->lastPage()) as $page => $url)
+                <div class="pagination-btn">
+                    <a href="{{ $url }}" class="pagination-number-btn text dg {{ $partenaires->currentPage() == $page ? 'active' : '' }}">
+                        {{ $page }}
+                    </a>
+                </div>
+            @endforeach
+
+            @if ($partenaires->hasMorePages())
+                <a href="{{ $partenaires->nextPageUrl() }}">
+                    <div class="pagination-btn pagination-icon-btn text">
+                        <i class="ri-arrow-right-s-line"></i>
+                    </div>
+                </a>
+            @else
+                <div class="pagination-btn pagination-icon-btn text disabled">
+                    <i class="ri-arrow-right-s-line"></i>
+                </div>
+            @endif
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .disabled{
+            background-color: var(--primary-color);
+            color: var(--white-color) !important;
+        }
+    </style>
 
 @stop

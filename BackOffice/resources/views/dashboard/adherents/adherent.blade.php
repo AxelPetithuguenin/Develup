@@ -75,58 +75,102 @@
             </div>
         </div>
     </div>
+
+    <!-- // PAGINATION // -->
+    <div class="pagination">
+        <div class="pagination-container">
+            @if ($adherents->onFirstPage())
+                <div class="pagination-btn pagination-icon-btn text disabled">
+                    <i class="ri-arrow-left-s-line"></i>
+                </div>
+            @else
+                <a href="{{ $adherents->previousPageUrl() }}">
+                    <div class="pagination-btn pagination-icon-btn text">
+                        <i class="ri-arrow-left-s-line"></i>
+                    </div>
+                </a>
+            @endif
+            @foreach ($adherents->getUrlRange(1, $adherents->lastPage()) as $page => $url)
+                <div class="pagination-btn">
+                    <a href="{{ $url }}" class="pagination-number-btn text dg {{ $adherents->currentPage() == $page ? 'active' : '' }}">
+                        {{ $page }}
+                    </a>
+                </div>
+            @endforeach
+            @if ($adherents->hasMorePages())
+                <div class="pagination-btn pagination-icon-btn text">
+                    <a href="{{ $adherents->nextPageUrl() }}">
+                        <i class="ri-arrow-right-s-line"></i>
+                    </a>
+                </div>
+            @else
+                <a href="{{ $adherents->nextPageUrl() }}">
+                    <div class="pagination-btn pagination-icon-btn text">
+                        <i class="ri-arrow-right-s-line"></i>
+                    </div>
+                </a>
+            @endif
+        </div>
+    </div>
+
+    <style>
+        .disabled{
+            background-color: var(--primary-color);
+            color: var(--white-color) !important;
+        }
+    </style>
     
-<style>
-.modal {
-    position: fixed;
-    display: none;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--background-filer);
-    z-index: 10;
-    overflow: auto;
-}
-.modal-dialog {
-    position: relative;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    margin: auto;
-    max-width: 500px;
-    padding: 20px;
-    background-color: var(--white-color);
-    border-radius: 15px;
-    box-shadow: 0px 0px 10px var(--primary-color); 
-}
-.modal-header{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.modal-header button{
-    position: absolute;
-    top: 5px;
-    right: 1rem;
-    color: var(--primary-color);
-    border: none;
-    background-color: var(--white-color);
-    cursor: pointer;
-}
-.modal-container{
-    padding: 20px 0;
-}
-.modal-footer{
-    margin: 15px 0;
-    display: flex;
-    justify-content: center;
-}
-.modal-footer button{
-    margin: 0 5px;
-}
-</style>
+    <style>
+        .modal {
+            position: fixed;
+            display: none;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--background-filer);
+            z-index: 10;
+            overflow: auto;
+        }
+        .modal-dialog {
+            position: relative;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            margin: auto;
+            max-width: 500px;
+            padding: 20px;
+            background-color: var(--white-color);
+            border-radius: 15px;
+            box-shadow: 0px 0px 10px var(--primary-color); 
+        }
+        .modal-header{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-header button{
+            position: absolute;
+            top: 5px;
+            right: 1rem;
+            color: var(--primary-color);
+            border: none;
+            background-color: var(--white-color);
+            cursor: pointer;
+        }
+        .modal-container{
+            padding: 20px 0;
+        }
+        .modal-footer{
+            margin: 15px 0;
+            display: flex;
+            justify-content: center;
+        }
+        .modal-footer button{
+            margin: 0 5px;
+        }
+    </style>
 
     <!-- // SCRIPT // -->
     <script>

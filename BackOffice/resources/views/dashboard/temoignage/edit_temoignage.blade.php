@@ -81,7 +81,7 @@
             var characterCount = content.length;
 
             // Définir la limite de caractères
-            var maxLength = 6000;
+            var maxLength = 5000;
 
             // Calculer le nombre de caractères restants
             var remainingCharacters = maxLength - characterCount;

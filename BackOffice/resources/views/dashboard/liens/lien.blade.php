@@ -23,7 +23,6 @@
                 <th>
                     <button class="btn btn-link" data-sort="nom">Nom du réseau social<i class="ri-expand-up-down-fill"></i></button>
                 </th>
-
                 <th>
                     Icone
                 </th>
@@ -67,6 +66,50 @@
 
         </tbody>
     </table>
+
+    <!-- // PAGINATION // -->
+    <div class="pagination">
+        <div class="pagination-container">
+            @if ($liens->onFirstPage())
+                <div class="pagination-btn pagination-icon-btn text disabled">
+                    <i class="ri-arrow-left-s-line"></i>
+                </div>
+            @else
+                <a href="{{ $liens->previousPageUrl() }}">
+                    <div class="pagination-btn pagination-icon-btn text">
+                        <i class="ri-arrow-left-s-line"></i>
+                    </div>
+                </a>
+            @endif
+            @foreach ($liens->getUrlRange(1, $liens->lastPage()) as $page => $url)
+                <div class="pagination-btn">
+                    <a href="{{ $url }}" class="pagination-number-btn text dg {{ $liens->currentPage() == $page ? 'active' : '' }}">
+                        {{ $page }}
+                    </a>
+                </div>
+            @endforeach
+            @if ($liens->hasMorePages())
+                <div class="pagination-btn pagination-icon-btn text">
+                    <a href="{{ $liens->nextPageUrl() }}">
+                        <i class="ri-arrow-right-s-line"></i>
+                    </a>
+                </div>
+            @else
+                <a href="{{ $liens->nextPageUrl() }}">
+                    <div class="pagination-btn pagination-icon-btn text">
+                        <i class="ri-arrow-right-s-line"></i>
+                    </div>
+                </a>
+            @endif
+        </div>
+    </div>
+
+    <style>
+        .disabled{
+            background-color: var(--primary-color);
+            color: var(--white-color) !important;
+        }
+    </style>
 
     <!-- // MODALE DE CONFIRMATION DE SUPPRESSIONS // -->
     <div class="modal" id="confirmDeleteModal" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">

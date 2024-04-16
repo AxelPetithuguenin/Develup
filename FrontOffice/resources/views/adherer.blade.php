@@ -95,57 +95,56 @@
 
             <!-- // SLIDER // -->
             <div class="slider-adherent">
-                <div class="prochaines-actions-content">
-                    <div class="slider-prochaines-actions swiper">
-                        <div class="slider-adherent-container">
-                            <div class="swiper-wrapper">
-                            
-                                <article class="card-adherent swiper-slide">
-                                    <i class="ri-draft-line lg icone-adherent"></i>
-                                    <p class="text">
-                                        Réaliser des actions de recrutement pour inscrire un maximum de personnes sur le registre 
-                                        « Don Volontaire de Moelle Osseuse » (DVMO)
-                                    </p>
-                                </article>
+                <div class="card-container swiper">
+                    <div class="card-content">
+                        <div class="swiper-wrapper">
 
-                                <article class="card-adherent swiper-slide">
-                                    <i class="ri-group-line lg icone-adherent"></i>
-                                    <p class="text">
-                                        Organiser des séances de formation des bénévoles
-                                    </p>
-                                </article>
+                            <article class="card-adherent swiper-slide">
+                                <i class="ri-draft-line lg icone-adherent"></i>
+                                <p class="text">
+                                    Réaliser des actions de recrutement pour inscrire un maximum de personnes sur le registre 
+                                    « Don Volontaire de Moelle Osseuse » (DVMO)
+                                </p>
+                            </article>
 
-                                <article class="card-adherent swiper-slide">
-                                    <i class="ri-megaphone-line lg icone-adherent"></i>
-                                    <p class="text">
-                                        Intervenir pour sensibiliser dans les milieux éducatifs (écoles, collèges, Lycées…), 
-                                        les entreprises, lors de manifestations sportives & culturelles…
-                                    </p>
-                                </article>
-                            
-                                <article class="card-adherent swiper-slide">
-                                    <i class="ri-organization-chart lg icone-adherent"></i>
-                                    <p class="text">
-                                        Assurer l’intendance des actions (accueil, logistique, restauration…)
-                                    </p>
-                                </article>
+                            <article class="card-adherent swiper-slide">
+                                <i class="ri-group-line lg icone-adherent"></i>
+                                <p class="text">
+                                    Organiser des séances de formation des bénévoles
+                                </p>
+                            </article>
 
-                                <article class="card-adherent swiper-slide">
-                                    <i class="ri-service-fill lg icone-adherent"></i>
-                                    <p class="text">
-                                        Ou tout simplement soutenir l’association…
-                                    </p>
-                                </article>
+                            <article class="card-adherent swiper-slide">
+                                <i class="ri-megaphone-line lg icone-adherent"></i>
+                                <p class="text">
+                                    Intervenir pour sensibiliser dans les milieux éducatifs (écoles, collèges, Lycées…), 
+                                    les entreprises, lors de manifestations sportives & culturelles…
+                                </p>
+                            </article>
+                                        
+                            <article class="card-adherent swiper-slide">
+                                <i class="ri-organization-chart lg icone-adherent"></i>
+                                <p class="text">
+                                    Assurer l’intendance des actions (accueil, logistique, restauration…)
+                                </p>
+                            </article>
 
-                            </div>
+                            <article class="card-adherent swiper-slide">
+                                <i class="ri-service-fill lg icone-adherent"></i>
+                                <p class="text">
+                                    Ou tout simplement soutenir l’association…
+                                </p>
+                            </article>
+
                         </div>
+                    </div>
+                    
                     <!-- // DOT // -->
-                    <div class="dot-adherent">
-                        <div class="swiper-pagination-adherent swiper-pagination"></div>
+                    <div class="dot-container">
+                        <div class="swiper-pagination-adherent"></div>
                     </div>
                 </div>
             </div>
-            </div>
-        </div>
+        </div>            
     </section>
 @stop

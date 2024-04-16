@@ -57,11 +57,11 @@
                             <i class="ri-arrow-left-s-line"></i>
                         </div>
                     @else
-                        <div class="pagination-btn pagination-icon-btn text">
-                            <a href="{{ $temoignages->previousPageUrl() }}">
+                        <a href="{{ $temoignages->previousPageUrl() }}">
+                            <div class="pagination-btn pagination-icon-btn text">
                                 <i class="ri-arrow-left-s-line"></i>
-                            </a>
-                        </div>
+                            </div>
+                        </a>
                     @endif
 
                     @foreach ($temoignages->getUrlRange(1, $temoignages->lastPage()) as $page => $url)
@@ -79,13 +79,16 @@
                             </a>
                         </div>
                     @else
-                        <div class="pagination-btn pagination-icon-btn text disabled">
-                            <i class="ri-arrow-right-s-line"></i>
-                        </div>
+                        <a href="{{ $temoignages    ->nextPageUrl() }}">
+                            <div class="pagination-btn pagination-icon-btn text">
+                                <i class="ri-arrow-right-s-line"></i>
+                            </div>
+                        </a>
                     @endif
                 </div>
             </div>
     </section>
+
     <style>
         .disabled{
             background-color: var(--primary-color);

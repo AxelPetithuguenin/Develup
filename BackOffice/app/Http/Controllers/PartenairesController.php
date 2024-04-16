@@ -19,7 +19,7 @@ class PartenairesController extends Controller
     {
         try{
             // RETOURNE TOUT LES PARTENAIRES // 
-            $partenaires =  Partenaires::all();
+            $partenaires =  Partenaires::paginate(10);
             return view('dashboard.partenaires.partenaire', compact('partenaires'));
         } 
         catch (\Exception $e) {
