@@ -24,8 +24,8 @@
 
             <!-- // DATE ACTUALITEE // -->
             <div class="form-group">
-                <label for="date_actualite" class="text label-dashboard">Date</label>
-                <input type="date" class="input-box text" name="date_actualite" id="date_actualite" class="form-control"/>
+                <label for="_date_actualite" class="text label-dashboard">Date</label>
+                <input type="date" class="input-box text" name="_date_actualite" id="_date_actualite" class="form-control"/>
                 @error('_date_actualite')
                     <div class="error-text">{{ $message }}</div>
                 @enderror

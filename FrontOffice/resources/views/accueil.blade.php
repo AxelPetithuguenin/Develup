@@ -157,30 +157,31 @@
         <h3 class="middle-title">Actualité</h3>
         <hr>
         <div class="voir-plus-text-container">
-            <a href="{{route('temoignage-show')}}" class="voir-plus text">Voir plus...</a>
+            <a href="{{route('actualites-show')}}" class="voir-plus text">Voir plus...</a>
         </div>
         <div class="card-container-temoignage swiper">
             <div class="card-content-actualite">
                <div class="swiper-wrapper">
-               @foreach($temoignages as $temoignage)
-                    <article class="card-temoignage-slider swiper-slide">
-                        <a href="{{ route('personnal_temoignage', ['id' => $temoignage->id]) }}" class="card-slider-image-link-temoignage">
-                            <img src="{{ asset('BackOffice/public/storage/image_temoignage/' . $temoignage->image_temoignage) }}" class="card-image"/>
-                        </a>
-                        <div class="card-text-container">
-                            <p class="card-text-title text">
-                                {{ implode(' ', array_slice(explode(' ', $temoignage->titre_temoignage), 0, 5)) }}
-                            </p>
-                            <p class="text">
-                                <i class="ri-double-quotes-r lg"></i>
-                                {{ implode(' ', array_slice(explode(' ', $temoignage->contenu_temoignage), 0, 4)) }}{{ str_word_count($temoignage->contenu_temoignage) > 5 ? '' : '' }}
-                                <a href="{{ route('personnal_temoignage', ['id' => $temoignage->id]) }}">
-                                    <span class="voir-plus-text" style="color: var(--gray-color);">Lire plus...</span>
+                    @foreach($actualites as $actualite) 
+                        <article class="simple-card-actualite swiper-slide">
+                            <div class="card-text-container-actu">
+                                <p class="card-title">
+                                    {{ $actualite->titre_actualite }}
+                                </p>
+                                <p class="text">
+                                    {{ implode(' ', array_slice(explode(' ', $actualite->contenu_actualite), 0, 10)) }}
+                                </p>
+                                <div class="card-btn">
+                                    <a href="{{ route('personnal_actualite', ['id' => $actualite->id]) }}" class="btn green-btn text">Voir plus</a>
+                                </div>
+                            </div>
+                            <div class="card-image-part">
+                            <a href="{{ route('personnal_actualite', ['id' => $actualite->id]) }}" class="card-image-link">
+                                    <img src="../../../BackOffice/public/storage/{{ $actualite->image }}" alt="{{ $actualite->titre_actualite }}" class="image-card-actu"/>  
                                 </a>
-                            </p>
-                        </div>
-                    </article>
-                @endforeach
+                            </div>
+                        </article>
+                    @endforeach
                </div>
             </div>
 

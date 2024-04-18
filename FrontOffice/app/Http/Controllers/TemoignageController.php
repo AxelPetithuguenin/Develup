@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Temoignage;
+use App\Models\Actualite;
 
 class TemoignageController extends Controller
 {
@@ -11,7 +12,8 @@ class TemoignageController extends Controller
     public function index_accueil()
     {
         $temoignages = Temoignage::take(7)->get();
-        return view('accueil', compact('temoignages'));
+        $actualites = Actualite::take(5)->get();
+        return view('accueil', compact('temoignages', 'actualites'));
     }
 
     // RETOURNE LA VIEW DE TOUS LES TEMOIGNAGES

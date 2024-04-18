@@ -85,6 +85,9 @@
                             <a href="{{route('partenaires-show')}}" class="text">
                                 Partenaires
                             </a>
+                            <a href="{{route('actualites-show')}}" class="text">
+                                Actualité
+                            </a>
                             <a href="#" class="text">
                                 Résultat
                             </a>

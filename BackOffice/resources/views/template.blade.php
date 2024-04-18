@@ -27,12 +27,13 @@
             <div class="sidebar-link-container">
                 <ul>
                     <li>
-                        <a href="{{route('actualites.index')}}" class="text sidebar-link"><i class="ri-calendar-fill"></i>
+                        <a href="{{ route('actualites.index') }}" class="text sidebar-link {{ Request::is('actualites*') ? 'active-link' : '' }}">
+                            <i class="ri-calendar-fill"></i>
                             <p class="sidebar-text">Actualite</p>
                         </a>
                     </li>
                     <li>
-                        <a href="{{route('temoignage.index')}}" class="text sidebar-link">
+                        <a href="{{ route('temoignage.index') }}" class="text sidebar-link {{ Request::is('dashboard/temoignage*') ? 'active-link' : '' }}">
                             <i class="ri-chat-3-fill"></i>
                             <p class="sidebar-text">Témoignages</p>
                         </a>
@@ -50,13 +51,13 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{route('partenaires.index')}}" class="text sidebar-link">
+                        <a href="{{route('partenaires.index')}}" class="text sidebar-link {{ Request::is('dashboard/partenaires*') ? 'active-link' : '' }}">
                             <i class="ri-shake-hands-fill"></i>
                             <p class="sidebar-text">Partenaires</p>
                         </a>
                     </li>
                     <li>
-                        <a href="{{route('adherent.index')}}" class="text sidebar-link">
+                        <a href="{{route('adherent.index')}}" class="text sidebar-link {{ Request::is('dashboard/adherent*') ? 'active-link' : '' }}">
                             <i class="ri-user-heart-line"></i>
                             <p class="sidebar-text">Adhérents</p>
                         </a>
@@ -98,7 +99,6 @@
             </div>
         </div>
     </section>
-
   
     <!-- // SCRIPT // -->
     <script>

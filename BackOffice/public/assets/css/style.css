@@ -238,6 +238,12 @@ header{
     margin: 25px;
     text-align: start;
 }
+.active-link {
+    border-radius: 15px; 
+    padding: 7px 12px; 
+    transition: background-color 0.3s ease;
+    background-color: var(--dark-green); 
+}
 .sidebar-link{
     display: flex;
 }
@@ -246,14 +252,14 @@ header{
 }
 .sidebar-link-container ul li:hover{
     background-color: var(--dark-green);
-    transition: .4s ease-in;
+    transition: .3s ease-in;
     border-radius: 15px;
-    padding: 4px;
 }
 .sidebar-link-container ul li i{
     padding: 0 5px;
 }
 .sidebar-link-container ul li a{
+    padding: 4px;
     color: var(--white-color);
 }
 

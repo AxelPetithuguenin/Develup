@@ -79,7 +79,7 @@
                             </a>
                         </div>
                     @else
-                        <a href="{{ $temoignages    ->nextPageUrl() }}">
+                        <a href="{{ $temoignages->nextPageUrl() }}">
                             <div class="pagination-btn pagination-icon-btn text">
                                 <i class="ri-arrow-right-s-line"></i>
                             </div>

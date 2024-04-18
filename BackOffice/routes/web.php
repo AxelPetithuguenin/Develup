@@ -37,7 +37,7 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 /*===== ACTUALITE =====*/
-Route::resource('/actualites', ActualiteController::class);
+Route::resource('/actualites', ActualiteController::class)->middleware('auth');
 /*===== PARTENAIRES =====*/
 Route::resource('dashboard/partenaires', PartenairesController::class)->middleware('auth');
 /*===== LIENS =====*/
