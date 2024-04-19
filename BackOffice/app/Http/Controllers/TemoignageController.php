@@ -118,11 +118,11 @@ class TemoignageController extends Controller
 
             // Validation des données
             $validator = Validator::make($request->all(), [
-                'titre_temoignage' => 'required|min:1',
-                'prenom_temoignage' => 'required|min:1',
-                'image_temoignage' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // 2 Mo maximum
-                'date_temoignage' => 'required',
-                'contenu_temoignage' => 'required|min:5',
+                'titre_temoignage' => 'required|min:1', 
+                'prenom_temoignage' => 'required|min:1', 
+                'image_temoignage' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // 2 Mo maximum
+                'date_temoignage' => 'required', 
+                'contenu_temoignage' => 'required|min:5', 
             ]);
 
             if ($validator->fails()) {

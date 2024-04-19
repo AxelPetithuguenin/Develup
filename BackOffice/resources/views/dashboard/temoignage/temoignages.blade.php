@@ -133,60 +133,10 @@
             </div>
         </div>
     </div>
-    
-<style>
-.modal {
-    position: fixed;
-    display: none;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--background-filer);
-    z-index: 10;
-    overflow: auto;
-}
-.modal-dialog {
-    position: relative;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    margin: auto;
-    max-width: 500px;
-    padding: 20px;
-    background-color: var(--white-color);
-    border-radius: 15px;
-    box-shadow: 0px 0px 10px var(--primary-color); 
-}
-.modal-header{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.modal-header button{
-    position: absolute;
-    top: 5px;
-    right: 1rem;
-    color: var(--primary-color);
-    border: none;
-    background-color: var(--white-color);
-    cursor: pointer;
-}
-.modal-container{
-    padding: 20px 0;
-}
-.modal-footer{
-    margin: 15px 0;
-    display: flex;
-    justify-content: center;
-}
-.modal-footer button{
-    margin: 0 5px;
-}
-</style>
 
+    
     <!-- // SCRIPT // -->
+    <!-- // SCRIPT MODAL // -->
     <script>
         function confirmDelete(id, titre) {
             $('#confirmDeleteModal').modal('show');
@@ -202,4 +152,5 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 @stop

@@ -57,6 +57,9 @@ class PartenairesController extends Controller
                 'logo_partenaire' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // 2 Mo maximum
                 'lien_id.*' => 'required|exists:liens,id',
                 'lien_url.*' => 'required|url',
+            ], [
+                'lien_url.*.required' => 'Le champ URL du lien est requis.',
+                'lien_url.*.url' => 'Le champ URL du lien doit être une URL valide.',
             ]);
     
             if ($validator->fails()) {
@@ -131,6 +134,9 @@ class PartenairesController extends Controller
                 'logo_partenaire' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // 2 Mo maximum
                 'lien_id.*' => 'required|exists:liens,id',
                 'lien_url.*' => 'required|url',
+            ], [
+                'lien_url.*.required' => 'Le champ URL du lien est requis.',
+                'lien_url.*.url' => 'Le champ URL du lien doit être une URL valide.',
             ]);
     
             if ($validator->fails()) {
@@ -145,7 +151,7 @@ class PartenairesController extends Controller
                 $logo_partenaire = $request->file('logo_partenaire');
                 $logoName = $logo_partenaire->getClientOriginalName(); 
                 $logoPath = $logo_partenaire->storeAs('public/logos', $logoName);
-                $partenaire->logo_partenaire = $logoPath;
+                $partenaire->logo_partenaire = $logoName;
             }
 
             $partenaire->save();
@@ -171,7 +177,6 @@ class PartenairesController extends Controller
             return redirect()->back()->with('error', 'Une erreur s\'est produite.');
         }
     }
-    
     
 
     /**

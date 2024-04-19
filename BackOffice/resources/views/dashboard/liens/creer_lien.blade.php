@@ -22,6 +22,7 @@
                 @enderror
             </div>
 
+            <!-- // TEXT // -->
             <div class="text-container-information-icone" style="margin: 50px 0 10px 0; text-align: justify;">
                 <p class="text">
                     Afin d'avoir une meilleure expérience, nous vous recommandons de vous rendre sur le site 
@@ -31,9 +32,13 @@
             </div>
 
             <!-- // ICON DU RESEAUX SOCIAUX // -->
-            <div class="form-group">
-                <label for="icone" class="text label-dashboard">Icône du resau social</label>
-                <input type="file" class="input-box text" name="icone" id="icone"/>
+            <div id="drop-zone" class="form-group">
+                <label for="icone" class="text label-dashboard" style="text-align: center;">Icône du réseau social</label>
+                <input type="file" class="input-box text" name="icone" id="icone" style="display: none;">
+                <div id="icone-preview-container" style="display: none;">
+                    <img id="icone-preview" src="#" alt="Preview" style="max-width: 100%; max-height: 100px;">
+                </div>
+                <p class="text">Glisser-déposer une icône SVG ici</p>
                 @error('icone')
                     <div class="error-text">{{ $message }}</div>
                 @enderror
@@ -46,5 +51,45 @@
 
         </div>
     </form>
+
+    <!-- // SCRIPT // -->
+
+    <!-- // PREVIEW DE L IMAGE -->
+    <script>
+        const dropZone = document.getElementById('drop-zone');
+        const input = document.getElementById('icone');
+
+        dropZone.addEventListener('dragover', (event) => {
+            event.preventDefault();
+            dropZone.classList.add('drag-over');
+        });
+
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.classList.remove('drag-over');
+        });
+
+        dropZone.addEventListener('drop', (event) => {
+            event.preventDefault();
+            dropZone.classList.remove('drag-over');
+            const files = event.dataTransfer.files;
+            input.files = files;
+            previewFile(files[0]);
+        });
+
+        function previewFile(file) {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onloadend = function() {
+                const iconePreview = document.getElementById('icone-preview');
+                iconePreview.src = reader.result;
+                document.getElementById('icone-preview-container').style.display = 'block';
+            };
+        }
+
+        input.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            previewFile(file);
+        });
+    </script>
 
 @stop

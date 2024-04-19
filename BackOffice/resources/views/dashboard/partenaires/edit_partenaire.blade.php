@@ -23,9 +23,18 @@
             </div>
 
             <!-- // LOGO PARTENAIRE // -->
-            <div class="form-group">
-                <label for="logo_partenaire" class="text label-dashboard">Logo :</label>
-                <input type="file" class="input-box text" name="logo_partenaire" id="logo_partenaire" class="form-control"/>
+            <div class="form-group" id="drop-zone">
+                <label for="logo_partenaire" class="text label-dashboard" style="text-align: center;">Glisser-déposer une image du témoignage</label>
+                <input type="file" class="input-box text" name="logo_partenaire" id="logo_partenaire" style="display: none;">
+                <div id="logo-preview-container">
+                    @if ($partenaires->logo_partenaire)
+                        <img id="logo-preview" src="{{ asset('BackOffice/public/storage/logos/' . $partenaires->logo_partenaire) }}" alt="Preview" style="max-width: 100%; max-height: 200px;">
+                    @else
+                        <p class="text">Aucune image sélectionnée</p>
+                    @endif
+                </div>
+                <p class="text">ou</p>
+                <p class="text">cliquez ici pour sélectionner une nouvelle image</p>
                 @error('logo_partenaire')
                     <div class="error-text">{{ $message }}</div>
                 @enderror
@@ -46,12 +55,22 @@
                                 <option value="{{ $link->id }}" {{ $lien->id == $link->id ? 'selected' : '' }}>{{ $link->nom }}</option>
                             @endforeach
                         </select>
+                        @foreach ($errors->get('lien_id.*') as $error)
+                             @foreach ($error as $message)
+                                <div class="error-text">{{ $message }}</div>
+                            @endforeach
+                        @endforeach
                     </div>
 
                     <!-- // LABEL POUR L'URL DU LIEN // -->
                     <div class="form-group">
                         <label for="lien_url_{{ $lien->id }}" class="text label-dashboard">URL du lien :</label>
                         <input type="text" class="input-box text" name="lien_url[]" id="lien_url_{{ $lien->id }}" value="{{ $lien->pivot->lien }}"/>
+                        @foreach ($errors->get('lien_url.*') as $error)
+                            @foreach ($error as $message)
+                                <div class="error-text">{{ $message }}</div>
+                            @endforeach
+                        @endforeach
                     </div>
 
                     <!-- Bouton de suppression -->
@@ -75,6 +94,8 @@
             linkContainer.parentNode.removeChild(linkContainer);
         }
     </script>   
+
+    <!-- // AJOUTER DES LIENS // -->
     <script>
         document.getElementById("add-lien").addEventListener("click", function() {
             let newFields = createFields();
@@ -116,6 +137,43 @@
             deleteButton.classList.add("btn", "delete-btn", "delete-lien");
             return deleteButton;
         }
+    </script>
+
+<script>
+        const dropZone = document.getElementById('drop-zone');
+        const input = document.getElementById('logo_partenaire');
+
+        dropZone.addEventListener('dragover', (event) => {
+            event.preventDefault();
+            dropZone.classList.add('drag-over');
+        });
+
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.classList.remove('drag-over');
+        });
+
+        dropZone.addEventListener('drop', (event) => {
+            event.preventDefault();
+            dropZone.classList.remove('drag-over');
+            const files = event.dataTransfer.files;
+            input.files = files;
+            previewFile(files[0]);
+        });
+
+        function previewFile(file) {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onloadend = function() {
+                const imageTemoignagePreview = document.getElementById('logo-preview');
+                imageTemoignagePreview.src = reader.result;
+                document.getElementById('logo-preview-container').style.display = 'block';
+            };
+        }
+
+        input.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            previewFile(file);
+        });
     </script>
 
 

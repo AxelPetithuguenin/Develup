@@ -72,7 +72,13 @@
                     <span class="bar-menu-dashboard"></span>
                     <span class="bar-menu-dashboard"></span>
                 </div>
-                <a href="#" class="btn btn-link text">Se déconnecter</a>
+                <!-- // BUTTON DECONNEXION //
+                <div id="deconnexion-container">
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit" class="btn btn-link text">Se déconnecter</button>
+                    </form>
+                </div> -->
             </div>
             <div class="dashboard-content">
                 <div class="dashboard-content-header">

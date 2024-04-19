@@ -55,8 +55,8 @@
         </tbody>
     </table>
 
-        <!-- // MODALE DE CONFIRMATION DE SUPPRESSIONS // -->
-        <div class="modal" id="confirmDeleteModal" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+    <!-- // MODALE DE CONFIRMATION DE SUPPRESSIONS // -->
+    <div class="modal" id="confirmDeleteModal" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -120,57 +120,6 @@
         }
     </style>
     
-    <style>
-        .modal {
-            position: fixed;
-            display: none;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: var(--background-filer);
-            z-index: 10;
-            overflow: auto;
-        }
-        .modal-dialog {
-            position: relative;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            margin: auto;
-            max-width: 500px;
-            padding: 20px;
-            background-color: var(--white-color);
-            border-radius: 15px;
-            box-shadow: 0px 0px 10px var(--primary-color); 
-        }
-        .modal-header{
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .modal-header button{
-            position: absolute;
-            top: 5px;
-            right: 1rem;
-            color: var(--primary-color);
-            border: none;
-            background-color: var(--white-color);
-            cursor: pointer;
-        }
-        .modal-container{
-            padding: 20px 0;
-        }
-        .modal-footer{
-            margin: 15px 0;
-            display: flex;
-            justify-content: center;
-        }
-        .modal-footer button{
-            margin: 0 5px;
-        }
-    </style>
 
     <!-- // SCRIPT // -->
     <script>
