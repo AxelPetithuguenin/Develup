@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\TemoignageController;
 use App\Http\Controllers\PartenairesController;
+use App\Http\Controllers\BureauController;
 use App\Http\Controllers\LiensController;
+use App\Http\Controllers\FonctionsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,3 +29,9 @@ Route::resource('liens', LiensController::class);
 
 /*===== TEMOIGNAGE =====*/
 Route::resource('dashboard/temoignage', TemoignageController::class);
+/*===== BUREAU =====*/
+Route::resource('dashboard/bureau', BureauController::class);
+/*===== FONCTION =====*/
+Route::resource('fonction', FonctionsController::class);
+
+

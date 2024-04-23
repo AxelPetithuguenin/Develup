@@ -13,8 +13,8 @@ return new class extends Migration
     {
         // CREATION DE LA TABLE PIVOT 
         Schema::create('bureau_fonctions', function (Blueprint $table) {
-            $table->foreignId('bureau_id')->constrained('bureau', 'id');
-            $table->foreignId('fonctions_id')->constrained('fonctions', 'id')->cascadeOnDelete();
+            $table->foreign('bureau_id')->references('id')->on('bureau')->onDelete('cascade');
+            $table->foreign('fonctions_id')->references('id')->on('fonctions')->onDelete('cascade');
             $table->primary(['bureau_id', 'fonctions_id']);
             $table->timestamps();
         });

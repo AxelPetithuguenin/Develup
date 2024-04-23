@@ -44,7 +44,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="text sidebar-link">
+                        <a href="{{route('bureau.index')}}" class="text sidebar-link">
                             <i class="ri-user-2-fill"></i>
                             <p class="sidebar-text">Bureau</p>
                         </a>
@@ -81,7 +81,16 @@
                                 </div>
                             </div>
                         @endif
-
+                        @if(session('error'))
+                            <div class="message-succes-dashboard">
+                                <div class="message-succes-container">
+                                    <div class="text">
+                                        <i class="ri-bard-line lg"></i>
+                                        {{ session('error') }}
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
                     <h1 class="middle-text dashboard-text">DASHBOARD</h1>
                     <div class="gray-line"></div>
                     <!-- // CONTAINER PAGE // -->

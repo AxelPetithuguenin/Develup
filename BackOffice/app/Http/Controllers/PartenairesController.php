@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Partenaires;
 use App\Models\Lien; // Pour la liste déroulante
-use App\Models\Liens;
 use Egulias\EmailValidator\Parser\PartParser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;

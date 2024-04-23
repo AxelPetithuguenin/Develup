@@ -76,7 +76,7 @@
 
         function createFields() {
             let newFields = document.createElement("div");
-            newFields.innerHTML = `
+            newFields.innerHTML = 
                 <div class="form-group">
                     <label for="lien_id" class="text label-dashboard">Choisir un lien vers un réseau social</label>
                     <select id="lien_id" name="lien_id[]" class="select-menu-dashboard text">
