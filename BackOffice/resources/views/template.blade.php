@@ -39,13 +39,13 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="text sidebar-link">
+                        <a href="{{ route('actions.index') }}" class="text sidebar-link">
                             <i class="ri-hospital-fill"></i>
                             <p class="sidebar-text">Actions</p>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="text sidebar-link">
+                        <a href="{{ route('bureau.index') }}" class="text sidebar-link {{ Request::is('dashboard/bureau*') ? 'active-link' : '' }}">
                             <i class="ri-user-2-fill"></i>
                             <p class="sidebar-text">Bureau</p>
                         </a>

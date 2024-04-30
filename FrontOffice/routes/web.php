@@ -3,9 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SimplyRouteController;
 use App\Http\Controllers\PartenairesController;
+use App\Http\Controllers\BureauControllerController;
 use App\Http\Controllers\ActualiteController;
 use App\Http\Controllers\TemoignageController;
 use App\Http\Controllers\AdherentController;
+use App\Http\Controllers\BureauController;
 use App\Models\Actualite;
 
 /*
@@ -43,7 +45,7 @@ use App\Models\Actualite;
     
 /*===== ASSOCIATION =====*/
     /*===== PRESENTATION PAGE =====*/ 
-    Route::get('/presentation-bureau', [SimplyRouteController::class,'presentation'])->name('presentation-show'); 
+    Route::get('/presentation-bureau', [BureauController::class,'index'])->name('presentation-show'); 
     /*===== PARTENAIRES =====*/ 
     Route::get('/partenaires', [PartenairesController::class,'index'])->name('partenaires-show'); 
     /*===== RESULTATS PAGE =====*/ 
@@ -60,3 +62,10 @@ use App\Models\Actualite;
 /*===== NOUS CONTACTER =====*/
     /*===== NOUS CONTACTER PAGE =====*/ 
     Route::get('/nous-contacter', [SimplyRouteController::class,'contact'])->name('contact-show'); 
+
+/*===== DETAILS PAGE =====*/
+    /*===== CREDITS PAGE  =====*/ 
+    Route::get('/credits', [SimplyRouteController::class,'credits'])->name('credits-show'); 
+
+    /*===== ERROR 404 =====*/ 
+

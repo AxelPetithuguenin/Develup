@@ -9,7 +9,7 @@
                 {{ $actualites->titre_actualite }}
             </h3>  
             <p class="text" style="color: var(--gray-color);">
-                {{ $actualites->_date_actualite }}
+                {{ \Carbon\Carbon::parse($actualites->_date_actualite)->isoFormat('D MMMM YYYY', 'Do MMMM YYYY') }}
             </p>
         </div>
         <div class="personnal-actualite-container">

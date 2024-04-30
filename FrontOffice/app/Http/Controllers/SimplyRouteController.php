@@ -40,4 +40,10 @@ class SimplyRouteController extends Controller
         function contact(){
             return view('contact'); 
         }
+
+    /*===== DETAILS  =====*/
+        /*===== CREDITS PAGE =====*/ 
+        function credits(){
+            return view('credit_page'); 
+        }
 }

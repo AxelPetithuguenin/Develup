@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="ENGAGEMENT LEUCEMIE">  
-    <meta name="robots" content="index,follow">
-
+    
     <title>Accueil-Engagement-Leucemie-ED</title>
 
     <!-- // LINK CSS // -->
@@ -164,7 +163,11 @@
                     </ul>
                 </div>
             </div>
-            <p style="font-size: .8em; color: var(--white-color); text-align:center; ">Designed by<a href="https://ethandelbos.com/" style="color: var(--white-color); font-weight:600;">EthanDelbos</a></p>
+            <p style="font-size: .8em; color: var(--white-color); text-align:center; ">
+                ©2024 Engagement Leucémie
+                <a href="{{route('credits-show')}}" style="color:var(--white-color);">Crédits</a>
+            </p>
+            
         </footer>
     @show
 

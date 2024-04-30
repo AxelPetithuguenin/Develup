@@ -91,6 +91,7 @@
 
             <!-- // CARD // -->
             <div class="wrap">
+
                 <article class="simple-card">
                     <div class="simple-card-image-container">
                         <img src="./assets/img/logo/don-de-moelle-osseuse-2.png" alt="le déroulement du don de la moelle osseuse" class="simple-card-image"/>
@@ -108,6 +109,7 @@
                         </p>
                     </div>
                 </article>
+
                 <article class="simple-card">
                     <div class="simple-card-text-container">
                         <p class="card-text-title text">
@@ -131,12 +133,13 @@
                         </p>
                     </div>
                     <div class="simple-card-image-container">
-                        <!--<img src="assets/img/don-de-moelle-osseuse-1.png" alt="le déroulement du don de la moelle osseuse" class="simple-card-image"/>-->
+                       <img src="./assets/img/logo/don-de-moelle-osseuse-2.png" alt="le déroulement du don de la moelle osseuse" class="simple-card-image"/>
                     </div>
                 </article>
+
                 <article class="simple-card">
                     <div class="simple-card-image-container">
-                        <!--<img src="assets/img/don-de-moelle-osseuse-1.png" alt="le déroulement du don de la moelle osseuse" class="simple-card-image"/>-->
+                    <img src="./assets/img/logo/don-de-moelle-osseuse-2.png" alt="le déroulement du don de la moelle osseuse" class="simple-card-image"/>
                     </div>
                     <div class="simple-card-text-container">
                         <p class="card-text-title text">
@@ -149,6 +152,7 @@
                         </p>
                     </div>
                 </article>
+
             </div>
 
             <!-- // VIDEO // -->

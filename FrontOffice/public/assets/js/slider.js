@@ -28,7 +28,7 @@ let swiperCardsProchainesActions = new Swiper(".card-content-prochaines-actions"
 });
 
 
-// SWIPER PROCHAINES ACTIONS //  
+// SWIPER ACTUALITE //  
 let swiperCardsActualite = new Swiper(".card-content-actualite", {
   loop: true,
   spaceBetween: 32,
@@ -51,12 +51,14 @@ let swiperCardsActualite = new Swiper(".card-content-actualite", {
   },
 
   breakpoints:{
-    1120: {
-      slidesPerView: 1,
+    1200: {
+      slidesPerView: 3,
+    },
+    700: {
+      slidesPerView: 2,
     },
   },
 });
-
 
 // SWIPER TEMOIGANGE //  
 let swiperCardsTemoignage = new Swiper(".card-content-temoignage", {

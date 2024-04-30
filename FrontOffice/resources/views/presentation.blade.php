@@ -6,8 +6,13 @@
     <section class="container-page">
         <div class="edito-president">
             <div class="edito-president-container">
-                <img src="./assets/img/bureau/​Alexandre-Chouffe.png" alt="image du président de l'Association de Engagement Leucemie" class="personnal-temoignage-img borde-radius-img-presentation">
+                @foreach($bureau as $bureaux)
+                    @if($bureaux->fonctions->contains('role', 'Président'))
+                        <img src="{{ asset('BackOffice/public/storage/pdp/' . $bureaux->photo) }}" alt="Image du président de l'Association de Engagement Leucemie" class="personnal-temoignage-img borde-radius-img-presentation">
+                    @endif
+                @endforeach
             </div>
+
             <h3 class="middle-title" style="text-align: center; margin: 10px;">
                 Edito du Président
             </h3>
@@ -30,132 +35,25 @@
             <div class="autre-membre-container">
                 <div class="wrap">
 
-                    <div class="presentation-box">
-                        <div class="image-presentation-box">
-                            <img src="./assets/img/bureau/​Alexandre-Chouffe.png" alt="image des membres du bureau et du Conseil d'Administration">
+                    @foreach($bureau as $bureaux)
+                        <div class="presentation-box">
+                            <div class="image-presentation-box">
+                                <img src="{{ asset('BackOffice/public/storage/pdp/' . $bureaux->photo) }}" alt="{{ $bureaux->nom}}">
+                            </div>
+                            <div class="text-container-box-presentation">
+                                <p class="text" style="font-weight: var(--medium-font-weight);">
+                                    {{ $bureaux->prenom}} {{ $bureaux->nom }}
+                                </p>
+                                <p class="text role-bureau">
+                                    @foreach($bureaux->fonctions as $fonction)
+                                        {{ $fonction->role }}
+                                        <br>
+                                    @endforeach
+                                </p>
+                            </div>
                         </div>
-                        <div class="text-container-box-presentation">
-                            <p class="text" style="font-weight: var(--medium-font-weight);">
-                                Alexandre Chouffe
-                            </p>
-                            <p class="text role-bureau">
-                                Président
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="presentation-box">
-                        <div class="image-presentation-box">
-                            <img src="./assets/img/bureau/Christophe-Will.png" alt="image des membres du bureau et du Conseil d'Administration">
-                        </div>
-                        <div class="text-container-box-presentation">
-                            <p class="text" style="font-weight: var(--medium-font-weight);">
-                                Christophe Will
-                            </p>
-                            <p class="text role-bureau">
-                                Vice-président & trésorier
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="presentation-box">
-                        <div class="image-presentation-box">
-                            <img src="./assets/img/bureau/Thierry-Dornier.png" alt="image des membres du bureau et du Conseil d'Administration">
-                        </div>
-                        <div class="text-container-box-presentation">
-                            <p class="text" style="font-weight: var(--medium-font-weight);">
-                                Thierry Dornier
-                            </p>
-                            <p class="text role-bureau">
-                                Vice-président
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="presentation-box">
-                        <div class="image-presentation-box">
-                            <img src="./assets/img/bureau/Brice-Alfonseda.png" alt="image des membres du bureau et du Conseil d'Administration">
-                        </div>
-                        <div class="text-container-box-presentation">
-                            <p class="text" style="font-weight: var(--medium-font-weight);">
-                                Brice Alfonseda
-                            </p>
-                            <p class="text role-bureau">
-                                Secrétaire
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="presentation-box">
-                        <div class="image-presentation-box">
-                            <img src="./assets/img/bureau/Laura-Verazzi.png" alt="image des membres du bureau et du Conseil d'Administration">
-                        </div>
-                        <div class="text-container-box-presentation">
-                            <p class="text" style="font-weight: var(--medium-font-weight);">
-                                Laura Verazzi
-                            </p>
-                            <p class="text role-bureau">
-                                Secrétaire adjointe
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="presentation-box">
-                        <div class="image-presentation-box">
-                            <img src="./assets/img/bureau/Marie-Thérèse-Humblot.png" alt="image des membres du bureau et du Conseil d'Administration">
-                        </div>
-                        <div class="text-container-box-presentation">
-                            <p class="text" style="font-weight: var(--medium-font-weight);">
-                                Marie-Thérèse Humblot
-                            </p>
-                            <p class="text role-bureau">
-                                Membre du CA
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="presentation-box">
-                        <div class="image-presentation-box">
-                            <img src="./assets/img/bureau/Laurent-Chauvin.png" alt="image des membres du bureau et du Conseil d'Administration">
-                        </div>
-                        <div class="text-container-box-presentation">
-                            <p class="text" style="font-weight: var(--medium-font-weight);">
-                                Laurent Chauvin
-                            </p>
-                            <p class="text role-bureau">
-                                Membre du CA Responsable partenariats
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="presentation-box">
-                        <div class="image-presentation-box">
-                            <img src="./assets/img/bureau/Heddi-Habdelli.png" alt="image des membres du bureau et du Conseil d'Administration">
-                        </div>
-                        <div class="text-container-box-presentation">
-                            <p class="text" style="font-weight: var(--medium-font-weight);">
-                                Heddi Habdelli
-                            </p>
-                            <p class="text role-bureau">
-                                Membre du CA Responsable réseaux sociaux
-                            </p>
-                        </div>
-                    </div>    
+                    @endforeach
                     
-                    <div class="presentation-box">
-                        <div class="image-presentation-box">
-                            <img src="./assets/img/bureau/Sylvain Guillaume.png" alt="image des membres du bureau et du Conseil d'Administration">
-                        </div>
-                        <div class="text-container-box-presentation">
-                            <p class="text" style="font-weight: var(--medium-font-weight);">
-                                Sylvain-Guillaume
-                            </p>
-                            <p class="text role-bureau">
-                                Membre du CA Responsable Transjurasienne
-                            </p>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </div>

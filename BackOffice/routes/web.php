@@ -7,6 +7,12 @@ use App\Http\Controllers\PartenairesController;
 use App\Http\Controllers\LiensController;
 use App\Http\Controllers\AdherentController;
 use App\Http\Controllers\ActualiteController;
+use App\Http\Controllers\FonctionsController;
+use App\Http\Controllers\BureauController;
+use App\Http\Controllers\ActionController;
+use App\Http\Controllers\PhotoController;
+
+
 use App\Models\Adherent;
 /*
 |--------------------------------------------------------------------------
@@ -46,3 +52,11 @@ Route::resource('liens', LiensController::class)->middleware('auth');
 Route::resource('dashboard/temoignage', TemoignageController::class)->middleware('auth');
 /*===== ADHERENT =====*/
 Route::resource('dashboard/adherent', AdherentController::class)->middleware('auth');
+/*===== BUREAU =====*/
+Route::resource('dashboard/bureau', BureauController::class)->middleware('auth');
+/*===== FONCTION =====*/
+Route::resource('fonction', FonctionsController::class)->middleware('auth');
+/*===== ACTION =====*/
+Route::resource('dashboard/actions', ActionController::class)->middleware('auth');
+/*===== PHOTO =====*/
+Route::resource('dashboard/photos', PhotoController::class)->middleware('auth');

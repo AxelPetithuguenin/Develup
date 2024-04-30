@@ -163,22 +163,20 @@
             <div class="card-content-actualite">
                <div class="swiper-wrapper">
                     @foreach($actualites as $actualite) 
-                        <article class="simple-card-actualite swiper-slide">
-                            <div class="card-text-container-actu">
-                                <p class="card-title">
-                                    {{ $actualite->titre_actualite }}
-                                </p>
-                                <p class="text">
-                                    {{ implode(' ', array_slice(explode(' ', $actualite->contenu_actualite), 0, 10)) }}
-                                </p>
-                                <div class="card-btn">
-                                    <a href="{{ route('personnal_actualite', ['id' => $actualite->id]) }}" class="btn green-btn text">Voir plus</a>
-                                </div>
-                            </div>
-                            <div class="card-image-part">
-                            <a href="{{ route('personnal_actualite', ['id' => $actualite->id]) }}" class="card-image-link">
-                                    <img src="../../../BackOffice/public/storage/{{ $actualite->image }}" alt="{{ $actualite->titre_actualite }}" class="image-card-actu"/>  
+                        <article class="card-actualite-slider swiper-slide">
+                            <p class="text dte-evt">
+                                {{ \Carbon\Carbon::parse($actualite->_date_actualite)->isoFormat('D MMMM YYYY', 'Do MMMM YYYY') }}
+                            </p>
+                            <div class="container-card-image">
+                                <a href="{{ route('personnal_actualite', ['id' => $actualite->id]) }}">
+                                    <img src="../../../BackOffice/public/storage/{{ $actualite->image }}" alt="{{ $actualite->titre_actualite }}"/> 
                                 </a>
+                            </div>
+                            <p class="card-title">
+                                {{ $actualite->titre_actualite }}
+                            </p>
+                            <div class="card-btn">
+                                <a href="{{ route('personnal_actualite', ['id' => $actualite->id]) }}" class="btn green-btn text">Voir plus</a>
                             </div>
                         </article>
                     @endforeach
