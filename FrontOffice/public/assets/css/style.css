@@ -372,7 +372,8 @@ header{
 .lg{
     color: var(--primary-color);
 }
-.text{
+.text,
+.text-slider-adherent{
     font-size: 1em;
     font-weight: var(--small-font-weight);
 }
@@ -816,7 +817,8 @@ header{
         font-size: 1em;
         font-weight: var(--medium-font-weight);
     }
-    .text{
+    .text,
+    .text-slider-adherent{
         font-size: .9em;
     }
     @keyframes BoomAniamtion {
@@ -944,7 +946,8 @@ header{
     .small-big-text{
         font-size: .9em;
     }
-    .text{
+    .text,
+    .text-slider-adherent{
         font-size: .875em;
     }
 }

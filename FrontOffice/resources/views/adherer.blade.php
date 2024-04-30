@@ -101,7 +101,7 @@
 
                             <article class="card-adherent swiper-slide">
                                 <i class="ri-draft-line lg icone-adherent"></i>
-                                <p class="text">
+                                <p class="text-slider-adherent">
                                     Réaliser des actions de recrutement pour inscrire un maximum de personnes sur le registre 
                                     « Don Volontaire de Moelle Osseuse » (DVMO)
                                 </p>
@@ -109,14 +109,14 @@
 
                             <article class="card-adherent swiper-slide">
                                 <i class="ri-group-line lg icone-adherent"></i>
-                                <p class="text">
+                                <p class="text-slider-adherent">
                                     Organiser des séances de formation des bénévoles
                                 </p>
                             </article>
 
                             <article class="card-adherent swiper-slide">
                                 <i class="ri-megaphone-line lg icone-adherent"></i>
-                                <p class="text">
+                                <p class="text-slider-adherent">
                                     Intervenir pour sensibiliser dans les milieux éducatifs (écoles, collèges, Lycées…), 
                                     les entreprises, lors de manifestations sportives & culturelles…
                                 </p>
@@ -124,14 +124,14 @@
                                         
                             <article class="card-adherent swiper-slide">
                                 <i class="ri-organization-chart lg icone-adherent"></i>
-                                <p class="text">
+                                <p class="text-slider-adherent">
                                     Assurer l’intendance des actions (accueil, logistique, restauration…)
                                 </p>
                             </article>
 
                             <article class="card-adherent swiper-slide">
                                 <i class="ri-service-fill lg icone-adherent"></i>
-                                <p class="text">
+                                <p class="text-slider-adherent">
                                     Ou tout simplement soutenir l’association…
                                 </p>
                             </article>
