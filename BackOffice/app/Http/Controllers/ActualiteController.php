@@ -107,7 +107,7 @@ class ActualiteController extends Controller
  
         $actualite->save();
  
-        return redirect()->route('actualites.index')->with('success', 'Actualité modifié avec succès!');
+        return redirect()->route('actualites.index')->with('success', 'Actualitée modifié avec succès!');
     } 
     catch (\Exception $e) {
         return redirect()->back()->with('error', 'Une erreur s\'est produite.');

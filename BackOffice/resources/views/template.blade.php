@@ -38,7 +38,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="text sidebar-link">
+                        <a href="{{route('actions.index')}}" class="text sidebar-link">
                             <i class="ri-hospital-fill"></i>
                             <p class="sidebar-text">Actions</p>
                         </a>

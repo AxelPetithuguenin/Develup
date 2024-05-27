@@ -5,6 +5,7 @@ use App\Http\Controllers\ActualiteController;
 use App\Http\Controllers\TemoignageController;
 use App\Http\Controllers\PartenairesController;
 use App\Http\Controllers\LiensController;
+use App\Http\Controllers\PhotoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,3 +36,6 @@ Route::resource('/actualites', ActualiteController::class);
 
 /*===== ACTION =====*/
 Route::resource('/actions', ActionController::class);
+
+/*===== PHOTO =====*/
+Route::resource('/photos', PhotoController::class);
